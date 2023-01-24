@@ -1,0 +1,28 @@
+.header-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: blue;
+    color: white;
+    margin: 0;
+}
+
+.header-list li {
+    padding: 16px;
+}
+
+.right-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-menu-posts:hover {
+    cursor: pointer;
+}
+
+.header-list a {
+    text-decoration: none;
+    color: white;
+}

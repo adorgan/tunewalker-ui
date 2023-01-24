@@ -1,0 +1,14 @@
+.blogpost-container{
+    display: flex;
+    margin: 24px;
+    padding: 16px;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    cursor: pointer;
+}
+
+.blogpost-title{
+    font-weight: bold;
+}

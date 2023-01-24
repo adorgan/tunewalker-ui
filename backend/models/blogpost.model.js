@@ -7,5 +7,5 @@ let Blogpost = new Schema({
     blogpost_title: {
         type: String
     },
-});
+}, { timestamps: true });
 module.exports = mongoose.model('Blogpost', Blogpost);

@@ -1,0 +1,10 @@
+.sidebar-container{
+    
+    width: 300px;
+}
+.sidebar-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+}

@@ -3,7 +3,7 @@ const router = express.Router();
 const Blogpost = require('../models/blogpost.model');
 
 router.get('/blogpost', (req, res) => {
-    Blogpost.find({}, (err, blogposts) => {
+    Blogpost.find({}, null, {sort: '-createdAt'}, (err, blogposts) => {
         if (err) {
             res.status(500).send(err);
         }
