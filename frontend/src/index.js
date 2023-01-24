@@ -11,6 +11,8 @@ import BlogpostList from './components/BlogpostList';
 import NewBlogpost from './components/NewBlogpost';
 import Blogpost from './components/Blogpost';
 import ViewBlog from './components/ViewBlog';
+import Login from './components/admin/Login';
+import Signup from './components/admin/Signup';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,14 @@ const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: '/admin',
+    element: <Signup />
+  },
+  {
+    path: '/login',
+    element: <Login />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
