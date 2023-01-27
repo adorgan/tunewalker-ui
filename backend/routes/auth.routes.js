@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
+const verify = require('./authVerify')
+
 
 
 
@@ -43,20 +45,13 @@ router.post('/admin/login', async(req, res) => {
         return res.status(401).send('incorrect credentials');
     }
 
-    res.status(200).send('success');
+    const token = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET);
+    res.status(200).send({token: token})
 
-    
 
-    user.save()
-    .then(() => {
-        res.status(200).send("user added successfully");
-    })
-    .catch(err => {
-        res.status(500).send(err);
-    });
 })
 
-router.get('/admin/users', (req, res) => {
+router.get('/admin/users', verify, (req, res) => {
     User.find({}, (err, users) => {
         if(err){
             return res.status(500).send(err);

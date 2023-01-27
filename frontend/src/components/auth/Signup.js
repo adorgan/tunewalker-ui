@@ -1,6 +1,8 @@
-import axios from "axios";
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import http from "../../utils/http/httpConfig";
+import './css/Signup.css'
+
 
 export default function Signup() {
 
@@ -19,9 +21,8 @@ export default function Signup() {
     }
 
     function handleSubmit() {
-        console.log(formData);
-        axios.post('http://localhost:4000/admin/signup', formData)
-        .then((res) => {
+        http.post('/admin/signup', formData)
+        .then(() => {
             navigate('/login');
         })
         .catch((err) => console.log(err))

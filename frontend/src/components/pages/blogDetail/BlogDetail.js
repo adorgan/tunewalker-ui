@@ -1,23 +1,23 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Blogpost from "./Blogpost";
+import http from "../../../utils/http/httpConfig";
+import Blogpost from "../home/Blogpost";
+import './css/BlogDetail.css'
 
-export default function ViewBlog({ props }) {
+
+const BlogDetail = () => {
 
     const { id } = useParams();
-
-
     const [post, setPost] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:4000/blogpost/${id}`)
+        http.get(`blogpost/${id}`)
             .then((res) => { setPost(res.data) })
             .catch((err) => console.log(err))
     }, [])
 
     return (
-        <div>
+        <div className="blog-detail-container">
             {post &&
                 <Blogpost post={post} />
             }
@@ -28,3 +28,5 @@ export default function ViewBlog({ props }) {
     )
 
 }
+
+export default BlogDetail;

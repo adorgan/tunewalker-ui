@@ -1,0 +1,16 @@
+.string-input-container{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    padding: 8px;
+}
+
+.string-input-container input{
+    padding: 8px;
+    border-radius: 2px;
+    border: 1px solid black;
+}
+
+.string-input-container label{
+    margin-right: 8px;
+}

@@ -1,35 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import BlogpostList from './components/BlogpostList';
-import NewBlogpost from './components/NewBlogpost';
-import Blogpost from './components/Blogpost';
-import ViewBlog from './components/ViewBlog';
-import Login from './components/admin/Login';
-import Signup from './components/admin/Signup';
+import BlogpostList from './components/pages/home/BlogpostList';
+import NewBlogpost from './components/admin/NewBlogpost';
+import BlogDetail from './components/pages/blogDetail/BlogDetail';
+import Login from './components/auth/Login';
+import Signup from './components/auth/Signup';
+import ProtectedRoute from './components/auth/ProtectedRoute';
+import './index.css'
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <ProtectedRoute><App /></ProtectedRoute>,
     children: [
       {
         path: "/blogposts",
-        element: <BlogpostList />,
+        element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
       },
       {
         path: "/new-blogpost",
-        element: <NewBlogpost />,
+        element: <ProtectedRoute><NewBlogpost /></ProtectedRoute>,
       },
       {
         path: "/blog/:id",
-        element: <ViewBlog />,
+        element: <ProtectedRoute><BlogDetail /></ProtectedRoute>,
       }
     ],
   },

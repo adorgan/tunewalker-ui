@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
+import Header from './components/partials/Header';
+import Sidebar from './components/partials/Sidebar';
 
 function App() {
   return (

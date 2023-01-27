@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import './BlogpostList.css'
 import Blogpost from "./Blogpost";
+import http from "../../../utils/http/httpConfig";
+import './css/BlogpostList.css'
+
 
 export default function BlogpostList() {
 
     const [list, setList] = useState([]);
 
     const getPosts = async () => {
-        return axios.get("http://localhost:4000/blogpost")
+        http.get("/blogpost")
             .then((posts) => {
                 const arr = posts.data;
                 setList(arr.map((post) => {

@@ -1,7 +1,11 @@
-import axios from "axios";
 import React, {useState} from "react";
+import http from "../../utils/http/httpConfig";
+import { useNavigate } from "react-router-dom";
+import './css/Login.css'
+
 
 export default function Login() {
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         username: null,
@@ -9,16 +13,21 @@ export default function Login() {
     })
 
     function handleChange(event) {
-        const newVale = event.target.value;
+        const newVal = event.target.value;
         const curForm = formData;
-        curForm[event.target.name] = newVale;
+        curForm[event.target.name] = newVal;
         setFormData(curForm);
     }
     function handleSubmit() {
-        axios.post('http://localhost:4000/admin/login', formData)
-        .then((res) => console.log(res))
+        http.post('/admin/login', formData)
+        .then((res) => {
+            sessionStorage.setItem('token', res.data.token)
+            navigate('/')
+        })
         .catch((err) => console.log(err))
     }
+
+
     return (
         <div>
             <form>

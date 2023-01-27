@@ -1,16 +1,13 @@
 import React from "react";
-import './Blogpost.css'
 import { useNavigate } from "react-router-dom";
+import './css/Blogpost.css'
 
-export default function Blogpost({  post }) {
+
+export default function Blogpost({ post }) {
     const navigate = useNavigate();
 
     function handleClick() {
-        console.log(post._id);        
         navigate(`/blog/${post._id}`);
-
-        
-
     }
 
     return (
