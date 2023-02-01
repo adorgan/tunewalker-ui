@@ -1,0 +1,41 @@
+.file-input{
+    display: none;
+}
+
+.file-upload{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.file-input-list-container{
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.blogpost_photo_filename{
+    width: 100%;
+    border: 1px solid black;
+    background: white;
+    margin: 0 5px;
+}
+
+.file-upload button:nth-child(1) {
+    white-space: nowrap;
+    padding: 5px;
+    background: #ffe567;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+.file-upload button:nth-child(3) {
+    white-space: nowrap;
+    padding: 5px;
+    background: #d23232;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: white;
+}
+
+.file-upload button:hover{
+    cursor: pointer;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import './css/Blogpost.css'
 
@@ -7,8 +7,12 @@ export default function Blogpost({ post }) {
     const navigate = useNavigate();
 
     function handleClick() {
-        navigate(`/blog/${post._id}`);
+        navigate(`/blogpost/${post._id}`);
     }
+
+    useEffect(() => {
+        document.getElementById('blogpost_body_id').innerHTML = post.blogpost_body;
+    })
 
     return (
         <div className="blogpost-container" onClick={handleClick}>
@@ -16,8 +20,8 @@ export default function Blogpost({ post }) {
                 {post.blogpost_title}
 
             </div>
-            <div className="blogpost-body">
-                {post.blogpost_body}
+            <div id="blogpost_body_id" className="blogpost-body">
+                {/* {post.blogpost_body} */}
 
             </div>
         </div>

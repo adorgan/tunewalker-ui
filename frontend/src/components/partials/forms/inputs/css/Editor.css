@@ -1,0 +1,22 @@
+.editor-container{
+    width: 800px;
+    padding: 8px;
+}
+
+.ql-editor{
+    min-height: 500px;
+}
+
+.ql-toolbar.ql-snow {
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.quill{
+    border: 1px solid black;
+}
+
+.ql-container.ql-snow{
+    background: white;
+    border: 0;
+}

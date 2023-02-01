@@ -6,4 +6,10 @@
 
 .textarea-input-container label{
     margin-right: 8px;
+    flex: 1;
+}
+
+.textarea-input-container textarea{
+    width: 100%;
+    flex: 10;
 }

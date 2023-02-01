@@ -9,8 +9,11 @@
     padding: 8px;
     border-radius: 2px;
     border: 1px solid black;
+    width: 100%;
+    flex: 10;
 }
 
 .string-input-container label{
     margin-right: 8px;
+    flex: 1;
 }

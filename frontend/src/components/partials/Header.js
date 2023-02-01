@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <div>
+    <div className="header-container">
       <ul className="header-list">
         <li><Link to={`/`}>Home</Link></li>
         <div className="right-menu">

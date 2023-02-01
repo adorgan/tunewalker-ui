@@ -1,9 +1,33 @@
 const express = require('express');
 const router = express.Router();
 const Blogpost = require('../models/blogpost.model');
+const aws = require('aws-sdk');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+const { find } = require('lodash');
+
+aws.config.update({
+    secretAccessKey: process.env.SECRET_ACCESS_KEY,
+    accessKeyId: process.env.ACCESS_KEY,
+    region: 'us-east-2'
+});
+
+const s3 = new aws.S3();
+
+const upload = multer({
+    storage: multerS3({
+        s3: s3,
+        acl: 'public-read',
+        bucket: process.env.BUCKET_NAME,
+        key: function (req, file, cb) {
+            // console.log(file);
+            cb(null, Date.now() + file.originalname);
+        }
+    })
+});
 
 router.get('/blogpost', (req, res) => {
-    Blogpost.find({}, null, {sort: '-createdAt'}, (err, blogposts) => {
+    Blogpost.find({}, null, { sort: '-createdAt' }, (err, blogposts) => {
         if (err) {
             res.status(500).send(err);
         }
@@ -24,7 +48,27 @@ router.get('/blogpost/:id', (req, res) => {
     });
 })
 
-router.post('/blogpost', (req, res) => {
+router.post('/blogpost', upload.fields([
+    { name: 'blogpost_photos[]' },
+    { name: 'blogpost_album_art' }
+]), (req, res) => {
+
+    const imgArray = [];
+    const filenamesArray = req.body['blogpost_filenames'].map((filename) => JSON.parse(filename))
+
+    req.body['blogpost_captions'].forEach((caption) => {
+        const captionObject = JSON.parse(caption);
+        const filenameObjectMatch = find(filenamesArray, (o) => o.id === captionObject.id);
+        const foundFile = find(req.files['blogpost_photos[]'], (o) => o.originalname === filenameObjectMatch.value);
+        imgArray.push({
+            photoURL: foundFile.location,
+            caption: captionObject.value
+        })
+
+    })
+
+    req.body.blogpost_photos = imgArray;
+    
     const blogPost = new Blogpost(req.body);
     blogPost.save()
         .then((newBlogPost) => {
@@ -44,17 +88,18 @@ router.delete("/blogpost/:id", (req, res) => {
         if (err) {
             res.status(500).send(err);
         } else {
-            res.json(blogpost);
+            res.status(200).send('Successfully Deleted')
         }
     });
 });
 
 router.put("/blogpost/:id", (req, res) => {
+    console.log(req.body);;
 
     Blogpost.findByIdAndUpdate(
         req.params.id,
-        req.body.blogpost,
-        {returnDocument: 'after'},
+        req.body,
+        { returnDocument: 'after' },
         (err, updatedBlogpost) => {
             if (err) {
                 res.status(500).send(err);

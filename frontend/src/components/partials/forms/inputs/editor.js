@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import './css/Editor.css'
 
-export default function BlogEditor({value, handleChange}) {
-    // const [value, setValue] = useState('');
-    // function logValue(val) {
-    //     setValue(val);
-    //     console.log(val);
-    // }
+const Editor = ({ value, handleEditorChange, label }) => {
 
-    return <ReactQuill theme="snow" value={value} onChange={handleChange} />;
+    return (
+        <div className="editor-container">
+            <div>{label}</div>
+            <ReactQuill theme="snow" value={value} onChange={handleEditorChange} />
+        </div>
+    )
 }
+
+export default Editor;

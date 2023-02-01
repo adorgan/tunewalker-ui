@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Blogpost from "./Blogpost";
 import http from "../../../utils/http/httpConfig";
 import './css/BlogpostList.css'
+import BlogpostPreview from "./BlogpostPreview";
 
 
 export default function BlogpostList() {
@@ -14,7 +15,7 @@ export default function BlogpostList() {
                 const arr = posts.data;
                 setList(arr.map((post) => {
                     return(
-                        <Blogpost key={post._id} post={post}/>
+                        <BlogpostPreview key={post._id} post={post}/>
                     )
                 }))
             })

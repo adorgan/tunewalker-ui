@@ -13,6 +13,7 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import './index.css'
+import EditBlogpost from './components/admin/EditBlogpost';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <ProtectedRoute><App /></ProtectedRoute>,
     children: [
+      {
+        path: "/",
+        element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
+      },
       {
         path: "/blogposts",
         element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
@@ -29,7 +34,11 @@ const router = createBrowserRouter([
         element: <ProtectedRoute><NewBlogpost /></ProtectedRoute>,
       },
       {
-        path: "/blog/:id",
+        path: "/blogpost/edit",
+        element: <ProtectedRoute><EditBlogpost /></ProtectedRoute>,
+      },
+      {
+        path: "/blogpost/:id",
         element: <ProtectedRoute><BlogDetail /></ProtectedRoute>,
       }
     ],

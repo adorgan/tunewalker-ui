@@ -1,3 +1,7 @@
 .blog-detail-container{
     flex: 1;
 }
+
+.blog-detail-image{
+    height: 100px;
+}

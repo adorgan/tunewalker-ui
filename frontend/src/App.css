@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: row;
   background-color: #e9e9e9;
-  height: 100%;
+  height: calc(100% - 50px);
+  overflow: auto;
 }
 
-html, body, #root, .App{
+ html, body, #root, .App{
   height: 100%;
 }
 
