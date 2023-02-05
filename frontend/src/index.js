@@ -14,43 +14,58 @@ import Signup from './components/auth/Signup';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import './index.css'
 import EditBlogpost from './components/admin/EditBlogpost';
+import Admin from './components/admin/Admin';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ProtectedRoute><App /></ProtectedRoute>,
+    element: <App />,
     children: [
       {
         path: "/",
-        element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
+        element: <BlogpostList />,
       },
       {
         path: "/blogposts",
-        element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
-      },
-      {
-        path: "/new-blogpost",
-        element: <ProtectedRoute><NewBlogpost /></ProtectedRoute>,
-      },
-      {
-        path: "/blogpost/edit",
-        element: <ProtectedRoute><EditBlogpost /></ProtectedRoute>,
+        element: <BlogpostList />,
       },
       {
         path: "/blogpost/:id",
-        element: <ProtectedRoute><BlogDetail /></ProtectedRoute>,
-      }
-    ],
+        element: <BlogDetail />,
+      },
+
+    ]
   },
   {
     path: '/admin',
-    element: <Signup />
+    element: <Admin />,
+    children: [
+      {
+        path: "/admin",
+        element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
+      },
+      {
+        path: '/admin/login',
+        element: <Login />
+      },
+      {
+        path: '/admin/signup',
+        element: <Signup />,
+      },
+      {
+        path: "/admin/new-blogpost",
+        element: <ProtectedRoute><NewBlogpost /></ProtectedRoute>,
+      },
+      {
+        path: "/admin/blogpost/edit",
+        element: <ProtectedRoute><EditBlogpost /></ProtectedRoute>,
+      },
+    ]
+
   },
-  {
-    path: '/login',
-    element: <Login />
-  }
+
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

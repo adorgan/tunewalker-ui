@@ -1,18 +1,35 @@
+import React, { useState, useContext, createContext, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import './App.css';
 import Header from './components/partials/Header';
 import Sidebar from './components/partials/Sidebar';
+import AdminContext from './utils/contexts/admin-context';
+import http from './utils/http/httpConfig';
 
 function App() {
-  return (
+  // const [isAdmin, setIsAdmin] = useState(false);
+  // const value = {isAdmin, setIsAdmin};
 
-    <div className='App'>
-      <Header />
-      <div className='sub-header-container'>
-        <Sidebar />
-        <Outlet />
+  // useEffect(() => {
+  //   http.get('/authenticated')
+  //   .then((res) => {
+  //     setIsAdmin(true);
+  //   })
+  //   .catch((err) => {
+  //     setIsAdmin(false);
+  //   })
+  // }, [])
+
+  return (
+    
+      <div className='App'>
+        <Header />
+        <div className='sub-header-container'>
+          <Sidebar />
+          <Outlet />
+        </div>
       </div>
-    </div>
+
 
   );
 }

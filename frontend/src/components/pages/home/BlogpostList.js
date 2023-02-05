@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Blogpost from "./Blogpost";
 import http from "../../../utils/http/httpConfig";
 import './css/BlogpostList.css'
 import BlogpostPreview from "./BlogpostPreview";
-
+import AdminContext from "../../../utils/contexts/admin-context";
 
 export default function BlogpostList() {
+    // const {isAdmin, setIsAdmin} = useContext(AdminContext);
 
     const [list, setList] = useState([]);
 

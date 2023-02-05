@@ -97,7 +97,7 @@ const EditBlogpost = () => {
             <form className="new-post-form" >
                 <StringInput controlName={'blogpost_title'} myLabel={'Title'} value={blogpostTitle} onChange={(e) => setBlogpostTitle(e.target.value)} />
                 <TextareaInput controlName={'blogpost_preview'} myLabel={'Preview:'} value={blogpostPreview} onChange={(e) => setBlogpostPreview(e.target.value)} />
-                <Editor handleChange={handleEditor} value={blogpostBody} />
+                <Editor handleEditorChange={handleEditor} value={blogpostBody} />
 
 
                 <div className="edit-blogpost-album-art-container">

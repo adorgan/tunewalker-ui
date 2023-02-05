@@ -51,6 +51,11 @@ router.post('/admin/login', async(req, res) => {
 
 })
 
+
+router.get('/authenticated', verify, (req, res) => {
+    return res.status(200).send(true)
+})
+
 router.get('/admin/users', verify, (req, res) => {
     User.find({}, (err, users) => {
         if(err){
