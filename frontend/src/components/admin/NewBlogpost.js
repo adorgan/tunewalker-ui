@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './css/NewBlogpost.css'
 import StringInput from "../partials/forms/inputs/String.input";
 import http from '../../utils/http/httpConfig'
@@ -33,8 +33,10 @@ export default function NewBlogpost() {
         5: ''
     });
 
+    const albumArtRef = useRef(null);
 
-    const formControls = [blogpostTitle, blogpostBody, blogpostPreview, blogpostFiles, blogpostCaptions];
+
+    const formControls = [blogpostTitle, blogpostBody, blogpostPreview, blogpostFiles, blogpostCaptions, blogpostAlbumArt];
 
     const handleFileChange = (event) => {
         const id = Number(event.target.id.split('_')[0]);
@@ -85,8 +87,6 @@ export default function NewBlogpost() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(blogpostFiles);
-        console.log(blogpostCaptions);
         let formData = new FormData();
         formData.append('blogpost_title', blogpostTitle)
         formData.append('blogpost_body', blogpostBody)
@@ -129,8 +129,24 @@ export default function NewBlogpost() {
             p[id] = event.target.value;
             return p;
         })
+    }
 
+    const handleAlbumArtChange = (event) => {
+        const file = event.target.files[0];
 
+        setBlogpostAlbumArt(file);
+        document.getElementById('blogpost_album_art_div').innerText = file.name;
+    }
+
+    const removeAlbumArt = (event) => {
+        event.preventDefault();
+        setBlogpostAlbumArt(null);
+        document.getElementById('blogpost_album_art_div').innerText = '';
+    }
+
+    const handleAlbumArtClick = (event) => {
+        event.preventDefault();
+        albumArtRef.current.click();
     }
 
 
@@ -140,12 +156,21 @@ export default function NewBlogpost() {
                 <StringInput controlName={'blogpost_title'} myLabel={'Title:'} value={blogpostTitle} onChange={(e) => setBlogpostTitle(e.target.value)} />
                 <TextareaInput controlName={'blogpost_preview'} myLabel={'Preview:'} value={blogpostPreview} onChange={(e) => setBlogpostPreview(e.target.value)} />
                 <Editor handleEditorChange={handleEditor} value={blogpostBody} label={'Post Body:'} />
-                {/* <input type='file' name='blogpost_photos' onChange={handleFileChange} />
-                <input type='file' name='blogpost_photos' onChange={handleFileChange} />
-                <input type='file' name='blogpost_album_art' onChange={(e) => setBlogpostAlbumArt(e.target.files[0])} /> */}
+
+                <div className="file-input-list-container">
+                    <input ref={albumArtRef} id={'blogpost_album_art'} type='file' name='blogpost_album_art' onChange={handleAlbumArtChange} className="file-input" />
+                    <div>Album Cover Art:</div>
+                    <div className="file-upload">
+                        <button className="upload-btn" onClick={handleAlbumArtClick}>Select File</button>
+                        <div id="blogpost_album_art_div" className="blogpost_photo_filename"></div>
+                        <button onClick={removeAlbumArt}>Clear</button>
+                    </div>
+                </div>
+
                 <br></br>
 
                 <div className="file-input-list-container">
+                    <div>Blog Photos:</div>
                     <FileInputList onCaptionChange={handleCaptionChange} removeFile={removeFile} inputIds={inputIdArray} handleFileChange={handleFileChange} />
                 </div>
                 <SubmitButton id='new-post-btn' action={'Create New Post'} onSubmit={handleSubmit} valid={formIsValid} />

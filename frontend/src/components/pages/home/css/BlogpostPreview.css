@@ -2,9 +2,13 @@
     display: flex;
     margin: 24px;
     padding: 16px;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 5px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
     background: white;
     cursor: pointer;
+}
+
+.blogpost-preview-album-art{
+    width: 100px;
 }

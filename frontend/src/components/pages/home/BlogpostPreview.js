@@ -11,12 +11,13 @@ const BlogpostPreview = ({post}) => {
     }
 
     useEffect(() => {
-        document.getElementById(`blogpost_${post._id}`).innerHTML = post.blogpost_body
+        // document.getElementById(`blogpost_${post._id}`).innerHTML = post.blogpost_body
     }, [])
 
     return(
         <div id={`blogpost_${post._id}`} className="blogpost-preview-container" onClick={handleClick}>
-            
+            <img className="blogpost-preview-album-art" src={post.blogpost_album_art}></img>
+            <div>{post.blogpost_preview}</div>
         </div>
     )
 }

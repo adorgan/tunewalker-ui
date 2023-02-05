@@ -23,7 +23,6 @@
 .file-upload button:nth-child(1) {
     white-space: nowrap;
     padding: 5px;
-    background: #ffe567;
     border: 1px solid black;
     border-radius: 3px;
 }

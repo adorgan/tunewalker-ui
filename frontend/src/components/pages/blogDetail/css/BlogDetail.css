@@ -1,7 +1,36 @@
-.blog-detail-container{
-    flex: 1;
+.blog-detail-container {
+    display: flex;
+    margin: 24px;
+    padding: 16px;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    cursor: pointer;
+    width: 100%;
+    height: fit-content;
 }
 
-.blog-detail-image{
+.blog-detail-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-detail-image-container {
+    display: flex;
+}
+
+.blog-detail-image {
+    object-fit: cover;
+    width: 500px;
+    height: 500px;
+}
+
+.blog-detail-album-art {
     height: 100px;
+}
+
+.blog-detail-body p,
+.blog-detail-body h2 {
+    margin: 0;
 }

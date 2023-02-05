@@ -1,0 +1,8 @@
+.edit-blogpost-album-art-img{
+    width: 100px;
+}
+
+.edit-blogpost-album-art-container{
+    display: flex;
+    flex-direction: row;
+}

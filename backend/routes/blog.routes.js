@@ -68,7 +68,8 @@ router.post('/blogpost', upload.fields([
     })
 
     req.body.blogpost_photos = imgArray;
-    
+    req.body.blogpost_album_art = req.files['blogpost_album_art'][0].location;
+
     const blogPost = new Blogpost(req.body);
     blogPost.save()
         .then((newBlogPost) => {
@@ -94,7 +95,6 @@ router.delete("/blogpost/:id", (req, res) => {
 });
 
 router.put("/blogpost/:id", (req, res) => {
-    console.log(req.body);;
 
     Blogpost.findByIdAndUpdate(
         req.params.id,
