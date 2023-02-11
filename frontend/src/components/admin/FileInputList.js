@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import TextareaInput from "../partials/forms/inputs/Textarea.input";
+import TextareaInput from "../partials/forms/inputs/textarea.input";
 import './css/FileInputList.css'
 
 const FileInputList = ({ handleFileChange, removeFile, onCaptionChange }) => {

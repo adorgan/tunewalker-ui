@@ -2,6 +2,7 @@ import React, { useState, useContext, createContext, useEffect } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import AdminContext from '../../utils/contexts/admin-context';
 import http from '../../utils/http/httpConfig';
+import './css/Admin.css'
 
 const Admin = () => {
     const navigate = useNavigate();
@@ -26,8 +27,7 @@ const Admin = () => {
 }, [isAdmin])
   
   return (
-    <AdminContext.Provider value={value}>
-        <div>Admin page</div>
+    <AdminContext.Provider value={value}>        
           <Outlet />
     </AdminContext.Provider>
 

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import './css/NewBlogpost.css'
 import './css/EditBlogpost.css'
-import StringInput from "../partials/forms/inputs/String.input";
+import StringInput from "../partials/forms/inputs/string.input";
 import http from '../../utils/http/httpConfig'
-import Editor from "../partials/forms/inputs/Editor";
+import Editor from "../partials/forms/inputs/editor";
 import { useNavigate, useLocation } from 'react-router-dom';
-import TextareaInput from "../partials/forms/inputs/Textarea.input";
+import TextareaInput from "../partials/forms/inputs/textarea.input";
 import { find, findIndex } from "lodash";
 
 
@@ -71,7 +71,7 @@ const EditBlogpost = () => {
        
         http.put(`blogpost/${post._id}`, formData)
             .then((res) => {
-                navigate(`/blogpost/${post._id}`)
+                navigate(`/admin/blogpost/${post._id}`)
             })
             .catch((err) => console.log(err))
     }

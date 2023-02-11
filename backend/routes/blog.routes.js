@@ -50,7 +50,8 @@ router.get('/blogpost/:id', (req, res) => {
 
 router.post('/blogpost', upload.fields([
     { name: 'blogpost_photos[]' },
-    { name: 'blogpost_album_art' }
+    { name: 'blogpost_album_art' },
+    { name: "blogpost_map" }
 ]), (req, res) => {
 
     const imgArray = [];
@@ -69,6 +70,8 @@ router.post('/blogpost', upload.fields([
 
     req.body.blogpost_photos = imgArray;
     req.body.blogpost_album_art = req.files['blogpost_album_art'][0].location;
+    req.body.blogpost_map = req.files['blogpost_map'][0].location;
+
 
     const blogPost = new Blogpost(req.body);
     blogPost.save()

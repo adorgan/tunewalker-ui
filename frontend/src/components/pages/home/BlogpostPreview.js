@@ -2,13 +2,9 @@ import React, { useEffect } from "react";
 import './css/BlogpostPreview.css';
 import { useNavigate } from "react-router-dom";
 
-const BlogpostPreview = ({post}) => {
+const BlogpostPreview = ({post, handleClick}) => {
 
     const navigate = useNavigate();
-
-    function handleClick() {
-        navigate(`/blogpost/${post._id}`);
-    }
 
     useEffect(() => {
         // document.getElementById(`blogpost_${post._id}`).innerHTML = post.blogpost_body

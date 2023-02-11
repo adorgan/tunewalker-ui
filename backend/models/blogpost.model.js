@@ -15,6 +15,9 @@ let Blogpost = new Schema({
     },
     blogpost_album_art: {
         type: String
+    },
+    blogpost_map: {
+        type: String
     }
 }, { timestamps: true });
 module.exports = mongoose.model('Blogpost', Blogpost);

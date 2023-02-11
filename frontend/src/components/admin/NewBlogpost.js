@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import './css/NewBlogpost.css'
-import StringInput from "../partials/forms/inputs/String.input";
+import StringInput from "../partials/forms/inputs/string.input";
 import http from '../../utils/http/httpConfig'
-import Editor from "../partials/forms/inputs/Editor";
-import TextareaInput from "../partials/forms/inputs/Textarea.input";
+import Editor from "../partials/forms/inputs/editor";
+import TextareaInput from "../partials/forms/inputs/textarea.input";
 import SubmitButton from "../partials/buttons/SubmitButton";
 import { useNavigate } from "react-router-dom";
 import FileInputList from "./FileInputList";
@@ -23,6 +23,7 @@ export default function NewBlogpost() {
         5: null
     });
     const [blogpostAlbumArt, setBlogpostAlbumArt] = useState('');
+    const [blogpostMap, setBlogpostMap] = useState('');
     const [inputIdVal, setInputIdVal] = useState(1);
     const [inputIdArray, setInputIdArray] = useState([0]);
     const [blogpostCaptions, setBlogpostCaptions] = useState({
@@ -34,6 +35,7 @@ export default function NewBlogpost() {
     });
 
     const albumArtRef = useRef(null);
+    const mapRef = useRef(null);
 
 
     const formControls = [blogpostTitle, blogpostBody, blogpostPreview, blogpostFiles, blogpostCaptions, blogpostAlbumArt];
@@ -92,6 +94,7 @@ export default function NewBlogpost() {
         formData.append('blogpost_body', blogpostBody)
         formData.append('blogpost_preview', blogpostPreview)
         formData.append('blogpost_album_art', blogpostAlbumArt)
+        formData.append('blogpost_map', blogpostMap)
 
         for (let [key, value] of Object.entries(blogpostFiles)) {
             if (value) {
@@ -133,9 +136,20 @@ export default function NewBlogpost() {
 
     const handleAlbumArtChange = (event) => {
         const file = event.target.files[0];
-
         setBlogpostAlbumArt(file);
         document.getElementById('blogpost_album_art_div').innerText = file.name;
+    }
+
+    const handleMapChange = (event) => {
+        const file = event.target.files[0];
+        setBlogpostMap(file);
+        document.getElementById('blogpost_map_div').innerText = file.name;
+    }
+
+    const removeMap = (event) => {
+        event.preventDefault();
+        setBlogpostMap(null);
+        document.getElementById('blogpost_map_div').innerText = '';
     }
 
     const removeAlbumArt = (event) => {
@@ -147,6 +161,11 @@ export default function NewBlogpost() {
     const handleAlbumArtClick = (event) => {
         event.preventDefault();
         albumArtRef.current.click();
+    }
+
+    const handleMapClick = (event) => {
+        event.preventDefault();
+        mapRef.current.click();
     }
 
 
@@ -164,6 +183,15 @@ export default function NewBlogpost() {
                         <button className="upload-btn" onClick={handleAlbumArtClick}>Select File</button>
                         <div id="blogpost_album_art_div" className="blogpost_photo_filename"></div>
                         <button onClick={removeAlbumArt}>Clear</button>
+                    </div>
+                </div>
+                <div className="file-input-list-container">
+                    <input ref={mapRef} id={'blogpost_map'} type='file' name='blogpost_map' onChange={handleMapChange} className="file-input" />
+                    <div>Map Photo:</div>
+                    <div className="file-upload">
+                        <button className="upload-btn" onClick={handleMapClick}>Select File</button>
+                        <div id="blogpost_map_div" className="blogpost_photo_filename"></div>
+                        <button onClick={removeMap}>Clear</button>
                     </div>
                 </div>
 

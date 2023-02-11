@@ -15,6 +15,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import './index.css'
 import EditBlogpost from './components/admin/EditBlogpost';
 import Admin from './components/admin/Admin';
+import Dashboard from './components/admin/Dashboard';
+import AdminBlogpostDetail from './components/admin/AdminBlogpostDetail';
 
 
 const router = createBrowserRouter([
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/admin",
-        element: <ProtectedRoute><BlogpostList /></ProtectedRoute>,
+        element: <ProtectedRoute><Dashboard /></ProtectedRoute>,
       },
       {
         path: '/admin/login',
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/blogpost/edit",
         element: <ProtectedRoute><EditBlogpost /></ProtectedRoute>,
+      },
+      {
+        path: "/admin/blogpost/:id",
+        element: <ProtectedRoute><AdminBlogpostDetail /></ProtectedRoute>,
       },
     ]
 

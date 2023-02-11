@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import http from "../../../utils/http/httpConfig";
-import Blogpost from "../home/Blogpost";
-import './css/BlogDetail.css'
+import http from "../../utils/http/httpConfig";
+import './css/AdminBlogpostDetail.css'
 import { useNavigate } from "react-router-dom";
-import SubmitButton from "../../partials/buttons/SubmitButton";
-import AdminContext from "../../../utils/contexts/admin-context";
+import SubmitButton from "../partials/buttons/SubmitButton";
 
-const BlogDetail = () => {
+const AdminBlogpostDetail = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const [post, setPost] = useState(null);
@@ -26,6 +24,10 @@ const BlogDetail = () => {
         navigate('/admin/blogpost/edit', { state: { post: post } });
     }
 
+    const handleHomeClick = () => {
+        navigate('/admin/');
+    }
+
     const handleDelete = () => {
         http.delete(`blogpost/${id}`)
             .then((res) => {
@@ -36,12 +38,14 @@ const BlogDetail = () => {
 
     return (
         <div className="detail-page-container">
-            {/* {isAdmin && 
             <div className="admin-action-button-container">
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
+                <button onClick={handleHomeClick}>Home</button>
+                <div>
+                    <button onClick={handleEdit}>Edit</button>
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
+
             </div>
-            } */}
             <div className="blog-detail-container">
                 {post &&
                     <>
@@ -49,7 +53,6 @@ const BlogDetail = () => {
                         <div className="blog-detail-header-container">
                             <h2>{post.blogpost_title}</h2>
                             <img className="blog-detail-album-art" src={post.blogpost_album_art}></img>
-                            <img className="blog-detail-album-art" src={post.blogpost_map}></img>
                         </div>
 
                         {/* {post.blogpost_photos.map((imgObject, i) => */}
@@ -62,7 +65,7 @@ const BlogDetail = () => {
                         <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_body }}></div>
 
 
-                        
+
                     </>
                 }
             </div>
@@ -73,4 +76,4 @@ const BlogDetail = () => {
 
 }
 
-export default BlogDetail;
+export default AdminBlogpostDetail;

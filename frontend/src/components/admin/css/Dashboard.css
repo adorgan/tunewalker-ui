@@ -1,0 +1,8 @@
+.admin-main-header{
+    height: 50px;
+    background-color: grey;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+}
