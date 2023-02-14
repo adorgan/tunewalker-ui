@@ -25,7 +25,7 @@ function App() {
       <div className='App'>
         <Header />
         <div className='sub-header-container'>
-          <Sidebar />
+          {/* <Sidebar /> */}
           <Outlet />
         </div>
       </div>

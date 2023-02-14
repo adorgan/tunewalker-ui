@@ -1,5 +1,5 @@
 import React from "react";
-import './css/string.input.css';
+import './css/String.input.css';
 
 const StringInput = ({ controlName, type = 'text', myLabel, onChange, value }) => {
 

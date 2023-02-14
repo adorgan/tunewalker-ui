@@ -49,31 +49,33 @@ router.get('/blogpost/:id', (req, res) => {
 })
 
 router.post('/blogpost', upload.fields([
-    { name: 'blogpost_photos[]' },
-    { name: 'blogpost_album_art' },
+    { name: 'blogpost_hero_photo' },
+    { name: 'blogpost_album_art_1' },
+    { name: "blogpost_album_art_2" },
+    { name: 'blogpost_coulda_shoulda_album_art_1' },
+    { name: 'blogpost_coulda_shoulda_album_art_2' },
     { name: "blogpost_map" }
 ]), (req, res) => {
 
-    const imgArray = [];
-    const filenamesArray = req.body['blogpost_filenames'].map((filename) => JSON.parse(filename))
+    console.log(req.body);
+    console.log(req.files);
 
-    req.body['blogpost_captions'].forEach((caption) => {
-        const captionObject = JSON.parse(caption);
-        const filenameObjectMatch = find(filenamesArray, (o) => o.id === captionObject.id);
-        const foundFile = find(req.files['blogpost_photos[]'], (o) => o.originalname === filenameObjectMatch.value);
-        imgArray.push({
-            photoURL: foundFile.location,
-            caption: captionObject.value
-        })
+    const payload = req.body;
+    payload["blogpost_album_art_1_details"] = JSON.parse(req.body["blogpost_album_art_1_details"]);
+    payload["blogpost_album_art_2_details"] = JSON.parse(req.body["blogpost_album_art_2_details"]);
+    payload["blogpost_map_details"] = JSON.parse(req.body["blogpost_map_details"]);
+    payload["blogpost_coulda_shoulda_1_details"] = JSON.parse(req.body["blogpost_coulda_shoulda_1_details"]);
+    payload["blogpost_coulda_shoulda_2_details"] = JSON.parse(req.body["blogpost_coulda_shoulda_2_details"]);
+    
+    
+    payload["blogpost_hero_photo"] = req.files["blogpost_hero_photo"][0].location;
+    payload["blogpost_album_art_1"] = req.files["blogpost_album_art_1"][0].location;
+    payload["blogpost_album_art_2"] = req.files["blogpost_album_art_2"][0].location;
+    payload["blogpost_coulda_shoulda_album_art_1"] = req.files["blogpost_coulda_shoulda_album_art_1"][0].location;
+    payload["blogpost_coulda_shoulda_album_art_2"] = req.files["blogpost_coulda_shoulda_album_art_2"][0].location;
+    payload["blogpost_map"] = req.files["blogpost_map"][0].location;
 
-    })
-
-    req.body.blogpost_photos = imgArray;
-    req.body.blogpost_album_art = req.files['blogpost_album_art'][0].location;
-    req.body.blogpost_map = req.files['blogpost_map'][0].location;
-
-
-    const blogPost = new Blogpost(req.body);
+    const blogPost = new Blogpost(payload);
     blogPost.save()
         .then((newBlogPost) => {
             res.status(200).json({

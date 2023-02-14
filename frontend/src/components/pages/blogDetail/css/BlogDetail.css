@@ -1,4 +1,4 @@
-.admin-action-button-container{
+.admin-action-button-container {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -8,14 +8,28 @@
 
 .blog-detail-container {
     display: flex;
-    margin: 24px;
-    padding: 16px;
+    /* margin: 24px; */
+    /* padding: 16px; */
     flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
-    background: white;
-
+    /* border-radius: 5px; */
+    /* box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background: white; */
+    /* align-items: center; */
     height: fit-content;
+    text-align: justify;
+    line-height: 1.75rem;
+}
+
+.blog-detail-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.blog-detail-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .blog-detail-header-container {
@@ -23,18 +37,52 @@
     justify-content: space-between;
 }
 
-.blog-detail-image-container {
+.blog-detail-hero-caption {
+    margin-left: 8px;
+    font-size: 9pt;
+    font-style: italic;
+}
+
+.blog-detail-album-details {
     display: flex;
+    flex-direction: row;
+    /* align-self: flex-start; */
+    /* border: 2px solid red; */
+    margin: 16px 0;
+}
+
+.blog-detail-album-details-details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px;
+    font-size: 10pt;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+    width: 300px;
+}
+
+
+
+.blog-detail-publish-date {
+    font-weight: bold;
+    margin-bottom: 32px;
+}
+
+.blog-detail-image-container {
+    width: 100%;
 }
 
 .blog-detail-image {
     object-fit: cover;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-height: 500px;
 }
 
 .blog-detail-album-art {
-    height: 100px;
+    width: 200px;
 }
 
 .blog-detail-body p,
@@ -42,6 +90,60 @@
     margin: 0;
 }
 
-.detail-page-container{
+.detail-page-container {
     flex: 3
+}
+
+.blog-detail-left {
+    flex: 1;
+}
+
+.blog-detail-center {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-detail-right {
+    flex: 1;
+}
+
+hr {
+    width: 100%;
+}
+
+.blog-detail-album-art-title{
+    color: yellow;
+    font-size: 14pt;
+}
+
+.blog-detail-album-art-artist{
+    font-size: 10pt;
+}
+
+.blog-detail-woulda-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(151, 4, 4);
+    color: #ffffffd1;
+    padding-bottom: 100px;
+    margin-top: 50px;
+}
+
+.blog-detail-woulda-details-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.blog-detail-woulda-details{
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    align-items: center;
+    
 }
