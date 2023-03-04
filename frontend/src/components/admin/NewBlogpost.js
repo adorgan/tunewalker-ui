@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import './css/NewBlogpost.css'
-import StringInput from "../partials/forms/inputs/string.input";
+import StringInput from "../partials/forms/inputs/String.input";
 import http from '../../utils/http/httpConfig'
 import Editor from "../partials/forms/inputs/Editor";
-import TextareaInput from "../partials/forms/inputs/textarea.input";
+import TextareaInput from "../partials/forms/inputs/Textarea.input";
 import SubmitButton from "../partials/buttons/SubmitButton";
 import { useNavigate } from "react-router-dom";
 import FileInputList from "./FileInputList";
