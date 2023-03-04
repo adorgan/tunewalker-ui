@@ -26,9 +26,9 @@ export default function BlogpostList({ isAdmin = false }) {
                     }
 
                     return (
-                        <>
-                            <BlogpostPreview key={post._id} post={post} handleClick={() => navigate(url)} />
-                        </>
+
+                        <BlogpostPreview key={post._id} post={post} handleClick={() => navigate(url)} />
+
                     )
                 }))
             })

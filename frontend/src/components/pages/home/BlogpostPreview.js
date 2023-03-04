@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import './css/BlogpostPreview.css';
 import { useNavigate } from "react-router-dom";
 
-const BlogpostPreview = ({post, handleClick}) => {
+const BlogpostPreview = ({ post, handleClick }) => {
 
     const navigate = useNavigate();
 
@@ -10,11 +10,11 @@ const BlogpostPreview = ({post, handleClick}) => {
         // document.getElementById(`blogpost_${post._id}`).innerHTML = post.blogpost_body
     }, [])
 
-    return(
+    return (
         <div id={`blogpost_${post._id}`} className="blogpost-preview-container" onClick={handleClick}>
-            <div>
-            <img className="blogpost-preview-album-art" src={post.blogpost_album_art_1}></img>
-            <img className="blogpost-preview-album-art" src={post.blogpost_album_art_2}></img>
+            <div className="blogpost-preview-album-art-container">
+                <img className="blogpost-preview-album-art" src={post.blogpost_album_art_1}></img>
+                <img className="blogpost-preview-album-art" src={post.blogpost_album_art_2}></img>
 
 
             </div>

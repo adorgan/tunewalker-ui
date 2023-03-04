@@ -7,8 +7,20 @@
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
     background: white;
     cursor: pointer;
+    height: 150px;
 }
 
 .blogpost-preview-album-art{
     width: 100px;
+}
+
+.blogpost-preview-album-art-container{
+    position: relative;
+    width: 150px;
+}
+
+.blogpost-preview-album-art:nth-child(2){
+    position: absolute;
+    top: 50px;
+    left: 50px;
 }
