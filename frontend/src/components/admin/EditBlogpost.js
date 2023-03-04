@@ -3,7 +3,7 @@ import './css/NewBlogpost.css'
 import './css/EditBlogpost.css'
 import StringInput from "../partials/forms/inputs/string.input";
 import http from '../../utils/http/httpConfig'
-import Editor from "../partials/forms/inputs/Editor";
+import Editor from "../partials/forms/inputs/editor";
 import { useNavigate, useLocation } from 'react-router-dom';
 import TextareaInput from "../partials/forms/inputs/textarea.input";
 import { find, findIndex } from "lodash";

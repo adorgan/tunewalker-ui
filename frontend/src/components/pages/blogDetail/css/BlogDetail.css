@@ -73,6 +73,8 @@
 
 .blog-detail-image-container {
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-detail-image {
@@ -107,6 +109,8 @@
 
 .blog-detail-right {
     flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 hr {
@@ -144,6 +148,28 @@ hr {
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    align-items: center;
-    
+    align-items: center;   
+}
+
+.blog-detail-map-details-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    color: white;
+    line-height: 1.2rem;
+    padding: 5px;
+}
+
+.blog-detail-map-container{
+    position: relative;
+}
+
+.blog-detail-album-rank{
+    align-self: flex-start;
+    background: red;
+    padding: 6px 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 18pt;
 }

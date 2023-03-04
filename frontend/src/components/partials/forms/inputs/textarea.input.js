@@ -1,5 +1,5 @@
 import React from "react";
-import './css/Textarea.input.css';
+import './css/textarea.input.css';
 
 const TextareaInput = ({ controlName, myLabel, onChange, value }) => {
 

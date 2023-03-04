@@ -6,7 +6,7 @@ import BlogpostPreview from "./BlogpostPreview";
 import AdminContext from "../../../utils/contexts/admin-context";
 import { useNavigate } from "react-router-dom";
 
-export default function BlogpostList({isAdmin=false}) {
+export default function BlogpostList({ isAdmin = false }) {
     // const {isAdmin, setIsAdmin} = useContext(AdminContext);
 
     const [list, setList] = useState([]);
@@ -18,15 +18,17 @@ export default function BlogpostList({isAdmin=false}) {
                 const arr = posts.data;
                 setList(arr.map((post) => {
                     let url = "";
-                    if(isAdmin){
+                    if (isAdmin) {
                         url = `/admin/blogpost/${post._id}`
                     }
-                    else{
+                    else {
                         url = `/blogpost/${post._id}`
                     }
 
-                    return(
-                        <BlogpostPreview key={post._id} post={post} handleClick={() => navigate(url)}/>
+                    return (
+                        <>
+                            <BlogpostPreview key={post._id} post={post} handleClick={() => navigate(url)} />
+                        </>
                     )
                 }))
             })

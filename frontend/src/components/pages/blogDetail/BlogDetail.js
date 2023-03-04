@@ -65,7 +65,7 @@ const BlogDetail = () => {
                         <div className="blog-detail-center">
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_intro }}></div>
                             <hr></hr>
-                            <div>#{post.blogpost_album_1_rank}</div>
+                            <div className="blog-detail-album-rank">{post.blogpost_album_1_rank}</div>
                             <div className="blog-detail-album-details">
                                 <img className="blog-detail-album-art" src={post.blogpost_album_art_1}></img>
                                 <div className="blog-detail-album-details-details">
@@ -83,7 +83,7 @@ const BlogDetail = () => {
                             </div>
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_review_1 }}></div>
                             <hr></hr>
-                            <div>#{post.blogpost_album_2_rank}</div>
+                            <div className="blog-detail-album-rank">{post.blogpost_album_2_rank}</div>
                             <div className="blog-detail-album-details">
                                 <img className="blog-detail-album-art" src={post.blogpost_album_art_2}></img>
                                 <div className="blog-detail-album-details-details">
@@ -121,7 +121,16 @@ const BlogDetail = () => {
                         </div>
 
                         <div className="blog-detail-right">
-                            <img className="blog-detail-album-art" src={post.blogpost_map}></img>
+                            <div className="blog-detail-map-container">
+                                <img className="blog-detail-album-art" src={post.blogpost_map}></img>
+                                <div className="blog-detail-map-details-container">
+                                    <div>{post.blogpost_map_details.miles} miles</div>
+                                    <div>{post.blogpost_map_details.steps} steps</div>
+                                    <div>{post.blogpost_map_details.hours}:{post.blogpost_map_details.minutes}</div>
+                                
+                                </div>
+                            </div>
+
                         </div>
 
                     </div>

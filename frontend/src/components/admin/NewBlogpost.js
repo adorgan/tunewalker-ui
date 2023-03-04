@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import './css/NewBlogpost.css'
 import StringInput from "../partials/forms/inputs/string.input";
 import http from '../../utils/http/httpConfig'
-import Editor from "../partials/forms/inputs/Editor";
+import Editor from "../partials/forms/inputs/editor";
 import TextareaInput from "../partials/forms/inputs/textarea.input";
 import SubmitButton from "../partials/buttons/SubmitButton";
 import { useNavigate } from "react-router-dom";

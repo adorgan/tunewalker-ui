@@ -12,8 +12,13 @@ const BlogpostPreview = ({post, handleClick}) => {
 
     return(
         <div id={`blogpost_${post._id}`} className="blogpost-preview-container" onClick={handleClick}>
-            <img className="blogpost-preview-album-art" src={post.blogpost_album_art}></img>
-            <div>{post.blogpost_preview}</div>
+            <div>
+            <img className="blogpost-preview-album-art" src={post.blogpost_album_art_1}></img>
+            <img className="blogpost-preview-album-art" src={post.blogpost_album_art_2}></img>
+
+
+            </div>
+            <div>{post.blogpost_title}</div>
         </div>
     )
 }
