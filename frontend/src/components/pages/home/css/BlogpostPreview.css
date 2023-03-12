@@ -24,3 +24,27 @@
     top: 50px;
     left: 50px;
 }
+
+.blogpost-preview-container span{
+    background: red;
+    padding: 3px 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+}
+
+.blogpost-preview-rank-container{
+    border-bottom: 1px solid black;
+    width: fit-content;
+    padding: 0 0 8px 0;
+}
+
+.blogpost-preview-details-container{
+    padding: 0 0 0 16px;
+}
+
+.blogpost-preview-details-title{
+    padding: 16px 0 0 0;
+    font-weight: bold;
+    font-size: 20px;
+}

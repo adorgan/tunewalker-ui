@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import './css/BlogpostPreview.css';
 import { useNavigate } from "react-router-dom";
 
 const BlogpostPreview = ({ post, handleClick }) => {
 
     const navigate = useNavigate();
+    const [blogDate, setBlotDate] = useState("");
 
     useEffect(() => {
-        // document.getElementById(`blogpost_${post._id}`).innerHTML = post.blogpost_body
+        const d = new Date(post.createdAt);
+        setBlotDate(`${d.getMonth() + 1}-${d.getDate()}-${d.getFullYear()}`);
     }, [])
 
     return (
@@ -18,7 +20,14 @@ const BlogpostPreview = ({ post, handleClick }) => {
 
 
             </div>
-            <div>{post.blogpost_title}</div>
+            <div className="blogpost-preview-details-container">
+                <div className="blogpost-preview-rank-container">
+                    <span>{post.blogpost_album_1_rank}</span>  <span>{post.blogpost_album_2_rank}</span>
+                </div>
+                <div className="blogpost-preview-details-title">{post.blogpost_title}</div>
+                <div>{blogDate}</div>
+            </div>
+
         </div>
     )
 }

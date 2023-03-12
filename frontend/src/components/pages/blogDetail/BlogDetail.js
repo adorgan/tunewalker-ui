@@ -71,10 +71,10 @@ const BlogDetail = () => {
                                 <div className="blog-detail-album-details-details">
                                     <div>
                                         <div className="blog-detail-album-art-title">{post.blogpost_album_art_1_details.title.toUpperCase()}</div>
-                                        <div className="blog-detail-album-art-artist">By {post.blogpost_album_art_1_details.band}</div>
+                                        <div className="blog-detail-album-art-artist">{post.blogpost_album_art_1_details.band}</div>
                                     </div>
 
-                                    <div>
+                                    <div className="blog-detail-album-art-details-info-container">
                                         <div>Release Date: {post.blogpost_album_art_1_details.releaseDate}</div>
                                         <div>Top Chart Position: {post.blogpost_album_art_1_details.chartPosition}</div>
                                     </div>
@@ -89,9 +89,9 @@ const BlogDetail = () => {
                                 <div className="blog-detail-album-details-details">
                                     <div>
                                         <div className="blog-detail-album-art-title">{post.blogpost_album_art_2_details.title.toUpperCase()}</div>
-                                        <div className="blog-detail-album-art-artist">By {post.blogpost_album_art_2_details.band}</div>
+                                        <div className="blog-detail-album-art-artist">{post.blogpost_album_art_2_details.band}</div>
                                     </div>
-                                    <div>
+                                    <div className="blog-detail-album-art-details-info-container">
                                         <div>Release Date: {post.blogpost_album_art_2_details.releaseDate}</div>
                                         <div>Top Chart Position: {post.blogpost_album_art_2_details.chartPosition}</div>
                                     </div>
@@ -137,6 +137,7 @@ const BlogDetail = () => {
 
                     <div className="blog-detail-woulda-container">
                         <h1>Could Shoulda</h1>
+                        <h4>*Two albums that were, in my opinion, unjustly  left out of the Rolling Stone Top 100</h4>
                         <div className="blog-detail-woulda-details-container">
                             <div className="blog-detail-woulda-details">
                                 <img className="blog-detail-album-art" src={post.blogpost_coulda_shoulda_album_art_1}></img>
