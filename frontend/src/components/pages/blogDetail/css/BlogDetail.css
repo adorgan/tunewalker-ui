@@ -63,7 +63,7 @@
     width: 300px;
 }
 
-.blog-detail-album-art-details-info-container{
+.blog-detail-album-art-details-info-container {
     line-height: 1.3;
 }
 
@@ -119,22 +119,22 @@ hr {
     width: 100%;
 }
 
-.blog-detail-album-art-title{
+.blog-detail-album-art-title {
     color: yellow;
     font-size: 14pt;
 }
 
-.blog-detail-album-art-artist{
+.blog-detail-album-art-artist {
     font-size: 10pt;
 }
 
-.blog-detail-woulda-container{
+.blog-detail-woulda-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgb(151, 4, 4);
     color: #ffffffd1;
-    padding-bottom: 100px;
+    padding: 0 16px 100px 16px;
     margin-top: 50px;
 }
 
@@ -142,22 +142,23 @@ hr {
     margin-bottom: 0;
 }
 
-.blog-detail-woulda-details-container{
+.blog-detail-woulda-details-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.blog-detail-woulda-details{
+.blog-detail-woulda-details {
     flex: 1 1;
     display: flex;
     flex-direction: column;
     max-width: 400px;
-    align-items: center;   
+    align-items: center;
+    padding: 0 0 20px 0;
 }
 
-.blog-detail-map-details-container{
+.blog-detail-map-details-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -167,12 +168,12 @@ hr {
     padding: 5px;
 }
 
-.blog-detail-map-container{
+.blog-detail-map-container {
     position: relative;
     padding: 0 16px;
 }
 
-.blog-detail-album-rank{
+.blog-detail-album-rank {
     align-self: flex-start;
     background: red;
     padding: 6px 8px;
@@ -181,13 +182,25 @@ hr {
     font-size: 18pt;
 }
 
+.blog-detail-map {
+    max-width: 300px;
+}
+
 @media (max-width: 700px) {
-    .blog-detail-content{
+    .blog-detail-content {
         flex-direction: column;
     }
 
-    .blog-detail-woulda-details-container{
+    .blog-detail-woulda-details-container {
         flex-direction: column;
         align-items: center;
     }
-  }
+
+    .blog-detail-album-art {
+        width: 100px;
+    }
+
+    .blog-detail-album-details-details {
+        width: 100%;
+    }
+}

@@ -122,7 +122,7 @@ const BlogDetail = () => {
 
                         <div className="blog-detail-right">
                             <div className="blog-detail-map-container">
-                                <img className="blog-detail-album-art" src={post.blogpost_map}></img>
+                                <img className="blog-detail-map" src={post.blogpost_map}></img>
                                 <div className="blog-detail-map-details-container">
                                     <div>{post.blogpost_map_details.miles} miles</div>
                                     <div>{post.blogpost_map_details.steps} steps</div>
