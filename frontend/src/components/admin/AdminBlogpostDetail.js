@@ -13,7 +13,7 @@ const AdminBlogpostDetail = () => {
     // const { isAdmin } = useContext(AdminContext)
 
     useEffect(() => {
-        http.get(`blogpost/${id}`)
+        http.get(`admin/blogpost/${id}`)
             .then((res) => {
                 setPost(res.data);
                 const d = new Date(res.data.createdAt);
@@ -40,11 +40,11 @@ const AdminBlogpostDetail = () => {
 
     return (
         <div className="detail-page-container">
-            <div className="admin-action-button-container">
-                <button onClick={handleHomeClick}>Home</button>
+            <div className="admin-main-header">
+                <button className="dashboard-header-btn" onClick={handleHomeClick}>Home</button>
                 <div>
-                    <button onClick={handleEdit}>Edit</button>
-                    <button onClick={handleDelete}>Delete</button>
+                    <button className="dashboard-header-btn" onClick={handleEdit}>Edit</button>
+                    <button className="dashboard-header-btn" onClick={handleDelete}>Delete</button>
                 </div>
 
             </div>
@@ -75,7 +75,7 @@ const AdminBlogpostDetail = () => {
                                         <div className="blog-detail-album-details-details">
                                             <div>
                                                 <div className="blog-detail-album-art-title">{post?.blogpost_album_art_1_details?.title.toUpperCase()}</div>
-                                                <div className="blog-detail-album-art-artist">By {post?.blogpost_album_art_1_details?.band}</div>
+                                                <div className="blog-detail-album-art-artist">{post?.blogpost_album_art_1_details?.band}</div>
                                             </div>
 
                                             <div>
@@ -93,7 +93,7 @@ const AdminBlogpostDetail = () => {
                                         <div className="blog-detail-album-details-details">
                                             <div>
                                                 <div className="blog-detail-album-art-title">{post?.blogpost_album_art_2_details.title.toUpperCase()}</div>
-                                                <div className="blog-detail-album-art-artist">By {post?.blogpost_album_art_2_details.band}</div>
+                                                <div className="blog-detail-album-art-artist">{post?.blogpost_album_art_2_details.band}</div>
                                             </div>
                                             <div>
                                                 <div>Release Date: {post?.blogpost_album_art_2_details?.releaseDate}</div>
@@ -141,6 +141,8 @@ const AdminBlogpostDetail = () => {
 
                             <div className="blog-detail-woulda-container">
                                 <h1>Could Shoulda</h1>
+                                <h4>*Two albums that were, in my opinion, unjustly  left out of the Rolling Stone Top 100</h4>
+
                                 <div className="blog-detail-woulda-details-container">
                                     <div className="blog-detail-woulda-details">
                                         <img className="blog-detail-album-art" src={post?.blogpost_coulda_shoulda_album_art_1}></img>

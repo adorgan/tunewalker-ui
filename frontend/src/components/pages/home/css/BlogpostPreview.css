@@ -7,7 +7,7 @@
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
     background: white;
     cursor: pointer;
-    height: 150px;
+    justify-content: space-between;
 }
 
 .blogpost-preview-album-art{
@@ -15,36 +15,48 @@
 }
 
 .blogpost-preview-album-art-container{
-    position: relative;
-    width: 150px;
+    position: relative;;
 }
 
-.blogpost-preview-album-art:nth-child(2){
+.blogpost-preview-rank{
     position: absolute;
-    top: 50px;
-    left: 50px;
+    left: 0;
 }
+
 
 .blogpost-preview-container span{
-    background: red;
-    padding: 3px 4px;
+    background: #ff0000d4;
     color: white;
     font-weight: bold;
-    font-size: 14pt;
+    padding-right: 2px;
+    border-bottom-right-radius: 2px;
+    padding-left: 2px;
 }
 
 .blogpost-preview-rank-container{
-    border-bottom: 1px solid black;
     width: fit-content;
     padding: 0 0 8px 0;
 }
 
 .blogpost-preview-details-container{
-    padding: 0 0 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
 }
 
 .blogpost-preview-details-title{
     padding: 16px 0 0 0;
     font-weight: bold;
     font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blogpost-preview-details-bands-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }

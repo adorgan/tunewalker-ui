@@ -100,6 +100,7 @@ router.delete("/blogpost/:id", (req, res) => {
 });
 
 router.put("/blogpost/:id", (req, res) => {
+    console.log(req.body);
 
     Blogpost.findByIdAndUpdate(
         req.params.id,

@@ -40,13 +40,6 @@ const BlogDetail = () => {
 
     return (
         <div className="detail-page-container">
-            {/* {isAdmin && 
-            <div className="admin-action-button-container">
-                <button onClick={handleEdit}>Edit</button>
-                <button onClick={handleDelete}>Delete</button>
-            </div>
-            } */}
-
             {post &&
                 <div className="blog-detail-container">
                     <div className="blog-detail-header">
@@ -99,25 +92,6 @@ const BlogDetail = () => {
                                 </div>
                             </div>
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_review_2 }}></div>
-
-                            {/* <hr></hr>
-                            <div>{post.blogpost_album_2_rank}</div>
-                            <div className="blog-detail-album-details">
-                                <img className="blog-detail-album-art" src={post.blogpost_album_art_2}></img>
-                                <div className="blog-detail-album-details-details">
-                                    <div>
-                                        <div className="blog-detail-album-art-title">{post.blogpost_album_art_2_details.title.toUpperCase()}</div>
-                                        <div className="blog-detail-album-art-artist">By {post.blogpost_album_art_2_details.band}</div>
-                                    </div>
-                                    <div>
-                                        <div>Release Date: {post.blogpost_album_art_2_details.releaseDate}</div>
-                                        <div>Top Chart Position: {post.blogpost_album_art_2_details.chartPosition}</div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_review_2 }}></div> */}
-
                         </div>
 
                         <div className="blog-detail-right">
@@ -153,10 +127,6 @@ const BlogDetail = () => {
                         </div>
 
                     </div>
-
-
-
-
                 </div>
             }
 

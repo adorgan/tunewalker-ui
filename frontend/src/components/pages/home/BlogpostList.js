@@ -13,21 +13,21 @@ export default function BlogpostList({ isAdmin = false }) {
     const navigate = useNavigate();
 
     const getPosts = async () => {
-        http.get("/blogpost")
+        http.get("/blogpost/list")
             .then((posts) => {
                 const arr = posts.data;
                 setList(arr.map((post) => {
                     let url = "";
                     if (isAdmin) {
-                        url = `/admin/blogpost/${post._id}`
+                        url = `admin/blogpost/${post.id}`
                     }
                     else {
-                        url = `/blogpost/${post._id}`
+                        url = `blogpost/${post.id}`
                     }
 
                     return (
 
-                        <BlogpostPreview key={post._id} post={post} handleClick={() => navigate(url)} />
+                        <BlogpostPreview key={post.id} post={post} handleClick={() => navigate(url)} />
 
                     )
                 }))
