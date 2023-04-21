@@ -1,0 +1,16 @@
+.delete-dialog-btn-container{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.delete-dialog-header{
+
+}
+
+.delete-dialog-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

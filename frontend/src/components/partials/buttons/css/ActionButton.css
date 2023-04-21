@@ -1,0 +1,21 @@
+.action-btn{
+    padding: 6px 8px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 3px;
+    border: 0;
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+}
+
+.action-btn:hover{
+    background-color: rgb(47, 47, 47);
+    cursor: pointer;
+}
+
+.action-btn:active{
+    background-color: rgb(0, 0, 0);
+}
+
+.action-btn-container{
+    padding: 0 4px;
+}

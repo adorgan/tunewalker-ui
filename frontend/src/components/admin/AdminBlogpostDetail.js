@@ -4,13 +4,20 @@ import http from "../../utils/http/httpConfig";
 import './css/AdminBlogpostDetail.css'
 import { useNavigate } from "react-router-dom";
 import SubmitButton from "../partials/buttons/SubmitButton";
+import ReactModal from 'react-modal';
+import DeleteDialog from "./DeleteDialog";
+import ActionButton from "../partials/buttons/ActionButton";
+
+ReactModal.setAppElement('#root');
 
 const AdminBlogpostDetail = () => {
     const navigate = useNavigate();
     const { id } = useParams();
     const [post, setPost] = useState(null);
     const [blogDate, setBlotDate] = useState("");
-    // const { isAdmin } = useContext(AdminContext)
+    const [showModal, setShowModal] = useState(false);
+
+
 
     useEffect(() => {
         http.get(`admin/blogpost/${id}`)
@@ -34,21 +41,38 @@ const AdminBlogpostDetail = () => {
         http.delete(`blogpost/${id}`)
             .then((res) => {
                 navigate('/admin');
+                setShowModal(false);
             })
             .catch((err) => console.log(err));
     }
 
+    const handleOpenModal = () => {
+        setShowModal(true);
+    }
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    }
+
+
+
     return (
         <div className="detail-page-container">
             <div className="admin-main-header">
-                <button className="dashboard-header-btn" onClick={handleHomeClick}>Home</button>
-                <div>
-                    <button className="dashboard-header-btn" onClick={handleEdit}>Edit</button>
-                    <button className="dashboard-header-btn" onClick={handleDelete}>Delete</button>
+                <ActionButton title={'Home'} onClick={handleHomeClick}></ActionButton>
+                <div className="dashboard-header-right-container">
+                    <ActionButton title={'Edit'} onClick={handleEdit}></ActionButton>
+                    <ActionButton title={'Delete'} onClick={handleOpenModal}></ActionButton>
                 </div>
-
             </div>
             <div className="blog-detail-container">
+                <ReactModal
+                    isOpen={showModal}
+                    className="modal"
+                    onRequestClose={handleCloseModal}
+                    shouldCloseOnOverlayClick={true}>
+                    <DeleteDialog onDelete={handleDelete} onHideModal={handleCloseModal}></DeleteDialog>
+                </ReactModal>
                 {post &&
                     <>
 

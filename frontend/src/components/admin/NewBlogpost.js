@@ -6,7 +6,6 @@ import Editor from "../partials/forms/inputs/Editor";
 import TextareaInput from "../partials/forms/inputs/Textarea.input";
 import SubmitButton from "../partials/buttons/SubmitButton";
 import { useNavigate } from "react-router-dom";
-import FileInputList from "./FileInputList";
 
 
 export default function NewBlogpost() {
@@ -210,144 +209,13 @@ export default function NewBlogpost() {
             }
         ))
 
-        // payload["blogpost_title"] = blogpostTitle;
-        // payload["blogpost_intro"] = blogpostIntro;
-        // payload["blogpost_review_1"] = blogpostReview1;
-        // payload["blogpost_review_2"] = blogpostReview2;
-
-        // payload["blogpost_hero_photo"] = blogpostHeroPhoto;
-        // payload["blogpost_hero_photo_caption"] = blogpostHeroPhotoCaption;
-
-        // payload["blogpost_album_art_1"] = blogpostAlbumArt1;
-        // payload["blogpost_album_art_2"] = blogpostAlbumArt2;
-        // payload["blogpost_coulda_shoulda_album_art_1"] = blogpostCouldaShouldaAlbumArt1;
-        // payload["blogpost_coulda_shoulda_album_art_2"] = blogpostCouldaShouldaAlbumArt2;
-        // payload["blogpost_map"] = blogpostCouldaShouldaAlbumArt2;
-
-        // payload["blogpost_album_art_1_details"] = {
-        //     title: blogpostAlbumArt1Title,
-        //     band: blogpostAlbumArt1Band,
-        //     releaseDate: blogpostAlbumArt1ReleaseDate,
-        //     chartPosition: blogpostAlbumArt1ChartPosition
-        // };
-        // payload["blogpost_album_art_2_details"] = {
-        //     title: blogpostAlbumArt2Title,
-        //     band: blogpostAlbumArt2Band,
-        //     releaseDate: blogpostAlbumArt2ReleaseDate,
-        //     chartPosition: blogpostAlbumArt2ChartPosition
-        // };
-
-        // payload["blogpost_map_details"] = {
-        //     steps: Number(blogpostMapSteps),
-        //     miles: Number(blogpostMapMiles),
-        //     hours: Number(blogpostMapHours),
-        //     minutes: Number(blogpostMapMinutes)
-        // };
-
-        // payload["blogpost_coulda_shoulda_1_details"] = {
-        //     title: blogpostCouldaShoulda1Title,
-        //     body: blogpostCouldaShoulda1Body
-        // };
-
-        // payload["blogpost_coulda_shoulda_2_details"] = {
-        //     title: blogpostCouldaShoulda2Title,
-        //     body: blogpostCouldaShoulda2Body
-        // };
-
-
-        // console.log(JSON.stringify(payload));
-
         http.post('blogpost', formData)
             .then((res) => {
-                // navigate(`/blogpost/${res.data.id}`)
+                navigate(`/admin`)
             })
             .catch((err) => console.log(err))
 
     }
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     let formData = new FormData();
-    //     formData.append('blogpost_title', blogpostTitle)
-    //     formData.append('blogpost_body', blogpostBody)
-    //     formData.append('blogpost_preview', blogpostPreview)
-    //     formData.append('blogpost_album_art', blogpostAlbumArt)
-    //     formData.append('blogpost_map', blogpostMap)
-
-    //     for (let [key, value] of Object.entries(blogpostFiles)) {
-    //         if (value) {
-    //             formData.append('blogpost_photos[]', value);
-    //             formData.append('blogpost_filenames[]', JSON.stringify({
-    //                 id: key,
-    //                 value: value.name
-    //             }));
-    //         }
-
-    //     }
-
-    //     for (let [key, value] of Object.entries(blogpostCaptions)) {
-    //         if (value) {
-    //             formData.append('blogpost_captions[]', JSON.stringify({
-    //                 id: key,
-    //                 value: value
-    //             }));
-    //         }
-
-    //     }
-
-    //     http.post('blogpost', formData)
-    //         .then((res) => {
-    //             navigate(`/blogpost/${res.data.id}`)
-    //         })
-    //         .catch((err) => console.log(err))
-    // }
-
-    // const handleCaptionChange = (event) => {
-    //     const id = Number(event.target.id.split('_')[0]);
-
-    //     setBlogpostCaptions((prev) => {
-    //         const p = { ...prev };
-    //         p[id] = event.target.value;
-    //         return p;
-    //     })
-    // }
-
-    // const handleAlbumArtChange = (event) => {
-    //     const file = event.target.files[0];
-    //     setBlogpostAlbumArt(file);
-    //     document.getElementById('blogpost_album_art_div').innerText = file.name;
-    // }
-
-    // const handleMapChange = (event) => {
-    //     const file = event.target.files[0];
-    //     setBlogpostMap(file);
-    //     document.getElementById('blogpost_map_div').innerText = file.name;
-    // }
-
-    // const removeMap = (event) => {
-    //     event.preventDefault();
-    //     setBlogpostMap(null);
-    //     document.getElementById('blogpost_map_div').innerText = '';
-    // }
-
-    // const removeAlbumArt = (event) => {
-    //     event.preventDefault();
-    //     setBlogpostAlbumArt(null);
-    //     document.getElementById('blogpost_album_art_div').innerText = '';
-    // }
-
-    // const handleAlbumArtClick = (event) => {
-    //     event.preventDefault();
-    //     albumArtRef.current.click();
-    // }
-
-    // const handleMapClick = (event) => {
-    //     event.preventDefault();
-    //     mapRef.current.click();
-    // }
-
-
-
 
     /**
      * album art 1
