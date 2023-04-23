@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 320 512"
+   version="1.1"
+   id="svg231"
+   sodipodi:docname="tunewalker.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs235" />
+  <sodipodi:namedview
+     id="namedview233"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.81738281"
+     inkscape:cx="259.3644"
+     inkscape:cy="171.89008"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg231" />
+  <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+  <path
+     d="M160 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM126.5 199.3c-1 .4-1.9 .8-2.9 1.2l-8 3.5c-16.4 7.3-29 21.2-34.7 38.2l-2.6 7.8c-5.6 16.8-23.7 25.8-40.5 20.2s-25.8-23.7-20.2-40.5l2.6-7.8c11.4-34.1 36.6-61.9 69.4-76.5l8-3.5c20.8-9.2 43.3-14 66.1-14c44.6 0 84.8 26.8 101.9 67.9L281 232.7l21.4 10.7c15.8 7.9 22.2 27.1 14.3 42.9s-27.1 22.2-42.9 14.3L247 287.3c-10.3-5.2-18.4-13.8-22.8-24.5l-9.6-23-19.3 65.5 49.5 54c5.4 5.9 9.2 13 11.2 20.8l23 92.1c4.3 17.1-6.1 34.5-23.3 38.8s-34.5-6.1-38.8-23.3l-22-88.1-70.7-77.1c-14.8-16.1-20.3-38.6-14.7-59.7l16.9-63.5zM68.7 398l25-62.4c2.1 3 4.5 5.8 7 8.6l40.7 44.4-14.5 36.2c-2.4 6-6 11.5-10.6 16.1L54.6 502.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L68.7 398z"
+     id="path229" />
+  <rect
+     style="fill:#ffffff"
+     id="rect293"
+     width="132.74074"
+     height="100.9319"
+     x="143.13979"
+     y="0"
+     ry="19.446281" />
+  <ellipse
+     style="fill:#000000;stroke-width:2.18622"
+     id="path399"
+     cx="211.65114"
+     cy="71.875748"
+     rx="47.101551"
+     ry="44.348866" />
+  <rect
+     style="fill:#0000ff;stroke-width:1.3871"
+     id="rect626"
+     width="14.123636"
+     height="36.702511"
+     x="150.85213"
+     y="53.830345"
+     ry="3.6702509" />
+  <rect
+     style="fill:#0000ff;stroke-width:1.38581"
+     id="rect626-7"
+     width="14.097398"
+     height="36.702511"
+     x="258.43466"
+     y="54.151569"
+     ry="3.6702509" />
+  <ellipse
+     style="fill:#0000ff;stroke-width:1.15598"
+     id="path802"
+     cx="211.8674"
+     cy="51.772583"
+     rx="56.110748"
+     ry="32.031479" />
+  <rect
+     style="fill:#000000;stroke-width:1.00712"
+     id="rect804"
+     width="86.86261"
+     height="33.643967"
+     x="168.21983"
+     y="52.60693"
+     ry="3.6702509" />
+  <ellipse
+     style="fill:#000000;stroke-width:1.02146"
+     id="path806"
+     cx="211.65114"
+     cy="54.977299"
+     rx="43.584229"
+     ry="24.544804" />
+  <ellipse
+     style="fill:#ffffff;stroke-width:2.48806"
+     id="path813-4"
+     cx="244.49504"
+     cy="53.094681"
+     rx="16.761049"
+     ry="13.300704" />
+  <rect
+     style="fill:#000000"
+     id="rect811"
+     width="12.11121"
+     height="24.871235"
+     x="165.01523"
+     y="52.986546"
+     ry="3.6702509" />
+  <ellipse
+     style="fill:#ffffff;stroke-width:2.48806"
+     id="path813"
+     cx="180.47867"
+     cy="50.715687"
+     rx="16.761049"
+     ry="13.300704" />
+  <ellipse
+     style="fill:#000000;stroke-width:2.24689"
+     id="path893"
+     cx="205.12051"
+     cy="61.505001"
+     rx="40.366329"
+     ry="34.865566" />
+  <rect
+     style="fill:#000000"
+     id="rect897"
+     width="7.4934287"
+     height="16.821983"
+     x="251.10634"
+     y="58.571087"
+     ry="3.7467144" />
+  <ellipse
+     style="fill:#000000;stroke-width:1.56981"
+     id="path899"
+     cx="214.86258"
+     cy="60.712067"
+     rx="43.737156"
+     ry="33.949821" />
+  <rect
+     style="fill:#0000ff;stroke-width:1.26966"
+     id="rect903"
+     width="7.2991667"
+     height="26.06073"
+     x="157.60794"
+     y="53.473156"
+     ry="5.8832746" />
+  <ellipse
+     style="fill:#0000ff;stroke-width:0.150127"
+     id="path905"
+     cx="28.331581"
+     cy="38.496346"
+     rx="4.9742451"
+     ry="5.1905193" />
+  <rect
+     style="fill:#0000ff"
+     id="rect907"
+     width="3.4603457"
+     height="24.654963"
+     x="29.845482"
+     y="14.70647"
+     ry="1.7301729" />
+  <ellipse
+     style="fill:#0000ff;stroke-width:0.150127"
+     id="path905-6"
+     cx="41.740417"
+     cy="38.928886"
+     rx="4.9742451"
+     ry="5.1905193" />
+  <rect
+     style="fill:#0000ff;stroke-width:1.00274"
+     id="rect907-2"
+     width="3.4603457"
+     height="24.790133"
+     x="43.254318"
+     y="15.003842"
+     ry="1.7396585" />
+  <ellipse
+     style="fill:#0000ff;stroke-width:0.150127"
+     id="path905-9"
+     cx="75.695061"
+     cy="62.718765"
+     rx="4.9742451"
+     ry="5.1905193" />
+  <rect
+     style="fill:#0000ff"
+     id="rect907-4"
+     width="3.4603457"
+     height="24.654963"
+     x="77.208961"
+     y="38.92889"
+     ry="1.7301729" />
+  <ellipse
+     style="fill:#0000ff;stroke-width:0.150127"
+     id="path905-4"
+     cx="111.37988"
+     cy="49.526199"
+     rx="4.9742451"
+     ry="5.1905193" />
+  <rect
+     style="fill:#0000ff"
+     id="rect907-9"
+     width="3.4603457"
+     height="24.654963"
+     x="112.89378"
+     y="25.73632"
+     ry="1.7301729" />
+  <rect
+     style="fill:#0000ff;stroke-width:1.03979"
+     id="rect970"
+     width="16.203386"
+     height="3.135006"
+     x="30.504324"
+     y="14.712677"
+     ry="1.567503" />
+</svg>

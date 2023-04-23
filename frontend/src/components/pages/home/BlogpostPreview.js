@@ -6,31 +6,35 @@ const BlogpostPreview = ({ post, handleClick }) => {
 
     const navigate = useNavigate();
     const [blogDate, setBlotDate] = useState("");
+    const [previewText, setPreviewText] = useState('');
 
     useEffect(() => {
+        let tmp = document.createElement('div');
+        tmp.innerHTML = post.blogpost_intro;
+        let start = 0;
+        for (let i = 0; i < 2; i++) {
+            let index = tmp.innerText.indexOf('.') + 1;
+            start = start + index;
+        }
+        setPreviewText(tmp.innerText.slice(0, start) + '..');
+
         const d = new Date(post.createdAt);
         setBlotDate(`${d.getMonth() + 1}-${d.getDate()}-${d.getFullYear()}`);
     }, [])
 
     return (
         <div id={`blogpost_${post._id}`} className="blogpost-preview-container" onClick={handleClick}>
-            <div className="blogpost-preview-album-art-container">
-                <img className="blogpost-preview-album-art" src={post.blogpost_album_art_1}></img>
-                <span className="blogpost-preview-rank">{post.blogpost_album_1_rank}</span>
+            <div>
+                <img className="blogpost-preview-hero-img" src={post.blogpost_hero_photo}></img>
             </div>
-            <div className="blogpost-preview-details-container">
-                <div className="blogpost-preview-details-title">{post.blogpost_title}</div>
-                <div>{blogDate}</div>
-                <div className="blogpost-preview-details-bands-container">
-                    <div>{post.blogpost_album_art_1_details.band}</div>
-                    <div>{post.blogpost_album_art_2_details.band}</div>
-                </div>
+            <div className="blogpost-preview-details-title">{post.blogpost_title}</div>
+            <div className="blogpost-preview-bands">
+                {`Featuring ${post.blogpost_album_art_1_details.band} and ${post.blogpost_album_art_2_details.band}`.toUpperCase()}
             </div>
-            <div className="blogpost-preview-album-art-container">
-                <img className="blogpost-preview-album-art" src={post.blogpost_album_art_2}></img>
-                <span className="blogpost-preview-rank">{post.blogpost_album_2_rank}</span>
+            <div className="blogpost-preview-by-line">By Tim Dorgan</div>
+            <div>{previewText}
+                <span className="blogpost-preview-continue-reading-span">continue reading</span>
             </div>
-
         </div>
     )
 }

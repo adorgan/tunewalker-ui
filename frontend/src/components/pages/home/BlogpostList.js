@@ -43,9 +43,10 @@ export default function BlogpostList({ isAdmin = false }) {
 
 
 
-    return (
+    return (<>
         <div className="blogpost-list">
             {list}
         </div>
+    </>
     );
 }

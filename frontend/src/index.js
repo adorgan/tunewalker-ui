@@ -17,6 +17,8 @@ import EditBlogpost from './components/admin/EditBlogpost';
 import Admin from './components/admin/Admin';
 import Dashboard from './components/admin/Dashboard';
 import AdminBlogpostDetail from './components/admin/AdminBlogpostDetail';
+import Subscribe from './components/pages/subscribe/Subscribe';
+import Home from './components/pages/home/Home';
 
 
 const router = createBrowserRouter([
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <BlogpostList />,
+        element: <Home />,
       },
       {
         path: "/blogposts",
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
         path: "/blogpost/:id",
         element: <BlogDetail />,
       },
+      {
+        path: "/subscribe",
+        element: <Subscribe />
+      }
 
     ]
   },

@@ -1,0 +1,25 @@
+.blogpost-mini-hero-img{
+    width: 200px;
+}
+
+.blogpost-mini-container{
+    display: flex;
+    flex-direction: column;
+    margin: 24px;
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.blogpost-mini-bands{
+    color: #000000a1;
+}
+
+.blogpost-mini-title{
+    font-weight: bold;
+    font-size: 24px;
+}

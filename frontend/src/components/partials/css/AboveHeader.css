@@ -1,0 +1,52 @@
+.above-header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-icon {
+    height: 64px;
+    align-self: center;
+}
+
+.above-header-title {
+    padding-left: 64px;
+    font-weight: bold;
+    font-size: 48px;
+    align-self: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.above-header-title:hover {
+    cursor: pointer;
+}
+
+.above-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 64px;
+}
+
+
+
+.above-header-icon-btn {
+    background-color: red;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 6px 6px;
+    border-radius: 3px;
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 10%);
+}
+
+.above-header-icon-btn a {
+    text-decoration: none;
+    color: white;
+    padding-left: 4px;
+}
+
+.above-header-icon-btn:hover {
+    background-color: rgb(228, 3, 3);
+}

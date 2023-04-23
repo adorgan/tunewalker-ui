@@ -1,0 +1,4 @@
+.blogpost-mini-list-container{
+    display: flex;
+    justify-content: space-evenly;
+}

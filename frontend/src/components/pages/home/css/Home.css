@@ -1,0 +1,15 @@
+.home-main-content-container{
+    flex: 3;
+}
+
+.home-sidebar-container{
+    flex: 1;
+}
+
+.home-title-latest{
+    font-size: 24px;
+    margin: 0 24px;
+    border-bottom: 2px solid red;
+    width: fit-content;
+    padding-top: 12px;
+}
