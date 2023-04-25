@@ -2,4 +2,20 @@
     height: 300px;
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 24px 24px;
+    box-sizing: border-box;
+}
+
+.footer-made-with{
+    font-size: 12px;
+    align-self: center;
+}
+
+.footer-podwalker-container a{
+    color: #a7c2ff;
+    text-decoration: none;
 }

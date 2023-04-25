@@ -26,7 +26,7 @@ export default function Header() {
         </li>
         <li>
           <div className="right-menu-posts" >
-            <Link to={`/`}>ABOUT</Link>
+            <Link to={`/about`}>ABOUT</Link>
           </div>
         </li>
       </ul>

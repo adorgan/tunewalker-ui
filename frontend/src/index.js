@@ -19,6 +19,7 @@ import Dashboard from './components/admin/Dashboard';
 import AdminBlogpostDetail from './components/admin/AdminBlogpostDetail';
 import Subscribe from './components/pages/subscribe/Subscribe';
 import Home from './components/pages/home/Home';
+import About from './components/pages/home/About';
 
 
 const router = createBrowserRouter([
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/subscribe",
         element: <Subscribe />
+      },
+      {
+        path: "/about",
+        element: <About />
       }
 
     ]

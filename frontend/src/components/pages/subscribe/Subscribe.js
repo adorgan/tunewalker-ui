@@ -18,7 +18,7 @@ const Subscribe = () => {
         const payload = {};
         payload['reCaptcha'] = recaptchaRef.current.getValue();
         payload['email'] = document.getElementById('subscribe-email').value;
-        http.post("/admin/subscribe", payload)
+        http.post("/subscribe", payload)
             .then((res) => {
                 setEmailSuccess(true);
                 document.getElementById('subscribe-email').value = '';

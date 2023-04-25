@@ -31,7 +31,7 @@ const Home = () => {
                     <hr></hr>
                     <div className="home-title-latest">Posts You Might Like</div>
                     {/* <BlogpostMini post={posts[0]} /> */}
-                    <BlogpostMiniList posts={[posts[0], posts[0], posts[0]]}/>
+                    <BlogpostMiniList posts={[posts[0], posts[1]]}/>
                     
                 </div>
 

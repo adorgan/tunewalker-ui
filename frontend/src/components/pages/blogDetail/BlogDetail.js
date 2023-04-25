@@ -1,18 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import http from "../../../utils/http/httpConfig";
-import Blogpost from "../home/Blogpost";
 import './css/BlogDetail.css'
-import { useNavigate } from "react-router-dom";
-import SubmitButton from "../../partials/buttons/SubmitButton";
-import AdminContext from "../../../utils/contexts/admin-context";
 
 const BlogDetail = () => {
-    const navigate = useNavigate();
     const { id } = useParams();
     const [post, setPost] = useState(null);
     const [blogDate, setBlotDate] = useState("");
-    // const { isAdmin } = useContext(AdminContext)
 
     useEffect(() => {
         http.get(`blogpost/${id}`)
@@ -25,18 +19,6 @@ const BlogDetail = () => {
             .catch((err) => console.log(err));
 
     }, [])
-
-    const handleEdit = () => {
-        navigate('/admin/blogpost/edit', { state: { post: post } });
-    }
-
-    const handleDelete = () => {
-        http.delete(`blogpost/${id}`)
-            .then((res) => {
-                navigate('/');
-            })
-            .catch((err) => console.log(err));
-    }
 
     return (
         <div className="detail-page-container">
@@ -101,7 +83,7 @@ const BlogDetail = () => {
                                     <div>{post.blogpost_map_details.miles} miles</div>
                                     <div>{post.blogpost_map_details.steps} steps</div>
                                     <div>{post.blogpost_map_details.hours}:{post.blogpost_map_details.minutes}</div>
-                                
+
                                 </div>
                             </div>
 
