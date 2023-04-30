@@ -1,0 +1,21 @@
+.archive-container{
+    display: flex;
+}
+
+.archive-main-padding{
+    flex: 1
+}
+
+.archive-main-content{
+    flex: 3
+}
+
+@media (max-width:600px){
+    .archive-main-padding{
+        flex: 0
+    }
+    
+    .archive-main-content{
+        flex: 1
+    }
+}

@@ -30,8 +30,7 @@ const Home = () => {
                     <BlogpostPreview post={posts[0]} handleClick={() => navigate(`blogpost/${posts[0]?.id}`)} />
                     <hr></hr>
                     <div className="home-title-latest">Posts You Might Like</div>
-                    {/* <BlogpostMini post={posts[0]} /> */}
-                    <BlogpostMiniList posts={[posts[0], posts[1]]}/>
+                    <BlogpostMiniList posts={[posts[0], posts[1], posts[0]]}/>
                     
                 </div>
 

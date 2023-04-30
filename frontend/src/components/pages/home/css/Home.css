@@ -1,5 +1,6 @@
 .home-main-content-container{
     flex: 3;
+    width: 100%;
 }
 
 .home-sidebar-container{
@@ -12,4 +13,14 @@
     border-bottom: 2px solid red;
     width: fit-content;
     padding-top: 12px;
+}
+
+@media (max-width:600px){
+    .home-sidebar-container{
+        flex: 0
+    }
+    
+    .home-main-content-container{
+        flex: 1
+    }
 }

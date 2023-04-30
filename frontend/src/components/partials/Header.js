@@ -7,7 +7,7 @@ export default function Header() {
     <div className="header-container">
       <ul className="header-list">
         <li className="right-menu-posts">
-          <Link to={`/blogposts`}>ARCHIVE</Link>
+          <Link to={'/archive'}>ARCHIVE</Link>
         </li>
         <li>
           <div className="right-menu-posts" >
@@ -16,7 +16,7 @@ export default function Header() {
         </li>
         <li>
           <div className="right-menu-posts" >
-            <Link to={`/`}>STATS</Link>
+            <Link to={`/stats`}>STATS</Link>
           </div>
         </li>
         <li>

@@ -20,6 +20,8 @@ import AdminBlogpostDetail from './components/admin/AdminBlogpostDetail';
 import Subscribe from './components/pages/subscribe/Subscribe';
 import Home from './components/pages/home/Home';
 import About from './components/pages/home/About';
+import Archive from './components/pages/home/Archive';
+import Stats from './components/pages/home/Stats';
 
 
 const router = createBrowserRouter([
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />
+      },
+      {
+        path: "/archive",
+        element: <Archive />
+      },
+      {
+        path: "/stats",
+        element: <Stats />
       }
 
     ]

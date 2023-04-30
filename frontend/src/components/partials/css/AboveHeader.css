@@ -50,3 +50,18 @@
 .above-header-icon-btn:hover {
     background-color: rgb(228, 3, 3);
 }
+
+@media (max-width:650px){
+    .header-icon {
+        height: 32px;
+    }
+
+    .above-header-title {
+        padding-left: 16px;
+        font-size: 32px;
+    }
+
+    .above-header-right {
+        padding-right: 16px;
+    }
+}
