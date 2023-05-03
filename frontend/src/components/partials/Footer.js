@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div className="footer-container">
             <div className="footer-podwalker-container">
-                <Link to={'https://www.thepodwalker.com'} >The Podwalker</Link>
+                <a href="https://www.thepodwalker.com" target={"_blank"}>The Podwalker</a>
             </div>
             <div className="footer-made-with">
                 {'Made with <3 in Colorado Springs'}

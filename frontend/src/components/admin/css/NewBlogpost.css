@@ -1,7 +1,16 @@
+.new-post-container{
+    display: flex;
+}
+
+.new-post-padding{
+    flex: 1;
+}
+
 .new-post-form{
     display: flex;
     flex-direction: column;
     padding-bottom: 100px;
+    flex: 3;
 }
 
 .file-input{

@@ -70,7 +70,6 @@ const BlogDetail = () => {
                                         <div>Release Date: {post.blogpost_album_art_2_details.releaseDate}</div>
                                         <div>Top Chart Position: {post.blogpost_album_art_2_details.chartPosition}</div>
                                     </div>
-
                                 </div>
                             </div>
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_review_2 }}></div>
@@ -86,13 +85,11 @@ const BlogDetail = () => {
 
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
 
                     <div className="blog-detail-woulda-container">
-                        <h1>Could Shoulda</h1>
+                        <h1>Coulda Shoulda</h1>
                         <h4>*Two albums that were, in my opinion, unjustly  left out of the Rolling Stone Top 100</h4>
                         <div className="blog-detail-woulda-details-container">
                             <div className="blog-detail-woulda-details">
@@ -111,8 +108,6 @@ const BlogDetail = () => {
                     </div>
                 </div>
             }
-
-
         </div >
 
     )

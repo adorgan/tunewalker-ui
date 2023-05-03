@@ -347,7 +347,8 @@ export default function NewBlogpost() {
 
 
     return (
-        <div>
+        <div className="new-post-container">
+            <div className="new-post-padding"></div>
             <form className="new-post-form">
                 <StringInput controlName={'blogpost_title'} myLabel={'Title:'} value={blogpostTitle} onChange={(e) => setBlogpostTitle(e.target.value)} />
                 <Editor handleEditorChange={handleEditorIntro} value={blogpostIntro} label={'Intro:'} />
@@ -365,6 +366,7 @@ export default function NewBlogpost() {
                 </div>
                 <TextareaInput controlName={'blogpost_hero_photo_caption'} myLabel={'Caption:'} onChange={(e) => setBlogpostHeroPhotoCaption(e.target.value)} />
 
+                <hr></hr>
                 <div className="file-input-list-container">
                     <input ref={blogpostAlbumArt1Ref} id={'input-album-art-1'} type='file' name='blogpost_album_art_1' onChange={handleAlbumArt1Change} className="file-input" />
                     <div>Review 1 Album Art:</div>
@@ -396,6 +398,18 @@ export default function NewBlogpost() {
                     <input id="album-art-1-chart-position" onChange={(e) => setBlogpostAlbumArt1ChartPosition(e.target.value)} />
                 </div>
 
+                <hr></hr>
+
+                <div className="file-input-list-container">
+                    <input ref={blogpostAlbumArt2Ref} id={'input-album-art-2'} type='file' name='blogpost_album_art_2' onChange={handleAlbumArt2Change} className="file-input" />
+                    <div>Review 2 Album Art:</div>
+                    <div className="file-upload">
+                        <button id="btn-album-art-2" className="upload-btn" onClick={handleAlbumArt2Click}>Select File</button>
+                        <div id="div-album-art-2" className="blogpost_photo_filename"></div>
+                        <button onClick={removeAlbumArt2} >Clear</button>
+                    </div>
+                </div>
+
                 <div>
                     <label htmlFor="album-art-2-title">Album 2 Title</label>
                     <input id="album-art-2-title" onChange={(e) => setBlogpostAlbumArt2Title(e.target.value)} />
@@ -417,6 +431,43 @@ export default function NewBlogpost() {
                     <input id="album-art-2-chart-position" onChange={(e) => setBlogpostAlbumArt2ChartPosition(e.target.value)} />
                 </div>
 
+                <hr></hr>
+
+
+
+                <div className="file-input-list-container">
+                    <input ref={blogpostCouldaShouldaAlbumArt1Ref} id={'input-coulda-shoulda-album-art-1'} type='file' name='blogpost_coulda-shoulda-album_art_1' onChange={handleCouldaShouldaAlbumArt1Change} className="file-input" />
+                    <div>Coulda Shoulda 1 Album Art:</div>
+                    <div className="file-upload">
+                        <button id="btn-coulda-shoulda-album-art-1" className="upload-btn" onClick={handleCouldaShouldaAlbumArt1Click}>Select File</button>
+                        <div id="div-coulda-shoulda-album-art-1" className="blogpost_photo_filename"></div>
+                        <button onClick={removeCouldaShouldaAlbumArt1} >Clear</button>
+                    </div>
+                </div>
+                <StringInput controlName={'blogpost_coulda-shoulda-1-title'} myLabel={'Coulda Shoulda 1 Title:'} value={blogpostCouldaShoulda1Title} onChange={(e) => setBlogpostCouldaShoulda1Title(e.target.value)} />
+                <Editor handleEditorChange={handleEditorCouldaWoulda1Body} value={blogpostCouldaShoulda1Body} label={'Coulda Shoulda 1 Title:'} />
+                <hr></hr>
+                <div className="file-input-list-container">
+                    <input ref={blogpostCouldaShouldaAlbumArt2Ref} id={'input-coulda-shoulda-album-art-2'} type='file' name='blogpost_coulda-shoulda-album_art_2' onChange={handleCouldaShouldaAlbumArt2Change} className="file-input" />
+                    <div>Coulda Shoulda 2 Album Art:</div>
+                    <div className="file-upload">
+                        <button id="btn-coulda-shoulda-album-art-2" className="upload-btn" onClick={handleCouldaShouldaAlbumArt2Click}>Select File</button>
+                        <div id="div-coulda-shoulda-album-art-2" className="blogpost_photo_filename"></div>
+                        <button onClick={removeCouldaShouldaAlbumArt2} >Clear</button>
+                    </div>
+                </div>
+                <StringInput controlName={'blogpost_coulda-shoulda-2-title'} myLabel={'Coulda Shoulda 2 Title:'} value={blogpostCouldaShoulda2Title} onChange={(e) => setBlogpostCouldaShoulda2Title(e.target.value)} />
+                <Editor handleEditorChange={handleEditorCouldaWoulda2Body} value={blogpostCouldaShoulda2Body} label={'Coulda Shoulda 2 Body:'} />
+                <hr></hr>
+                <div className="file-input-list-container">
+                    <input ref={blogpostMapRef} id={'input-map'} type='file' name='blogpost_map' onChange={handleMapChange} className="file-input" />
+                    <div>Map Photo:</div>
+                    <div className="file-upload">
+                        <button id="btn-map-photo" className="upload-btn" onClick={handleMapClick}>Select File</button>
+                        <div id="div-map-photo" className="blogpost_photo_filename"></div>
+                        <button onClick={removeMap} >Clear</button>
+                    </div>
+                </div>
                 <div>
                     <label htmlFor="map-steps">Steps</label>
                     <input type="number" id="map-steps" onChange={(e) => setBlogpostMapSteps(e.target.value)} />
@@ -434,64 +485,16 @@ export default function NewBlogpost() {
                     <input type="number" id="map-minutes" onChange={(e) => setBlogpostMapMinutes(e.target.value)} />
                 </div>
 
-                <div className="file-input-list-container">
-                    <input ref={blogpostAlbumArt2Ref} id={'input-album-art-2'} type='file' name='blogpost_album_art_2' onChange={handleAlbumArt2Change} className="file-input" />
-                    <div>Review 2 Album Art:</div>
-                    <div className="file-upload">
-                        <button id="btn-album-art-2" className="upload-btn" onClick={handleAlbumArt2Click}>Select File</button>
-                        <div id="div-album-art-2" className="blogpost_photo_filename"></div>
-                        <button onClick={removeAlbumArt2} >Clear</button>
-                    </div>
-                </div>
-                <div className="file-input-list-container">
-                    <input ref={blogpostCouldaShouldaAlbumArt1Ref} id={'input-coulda-shoulda-album-art-1'} type='file' name='blogpost_coulda-shoulda-album_art_1' onChange={handleCouldaShouldaAlbumArt1Change} className="file-input" />
-                    <div>Coulda Shoulda 1 Album Art:</div>
-                    <div className="file-upload">
-                        <button id="btn-coulda-shoulda-album-art-1" className="upload-btn" onClick={handleCouldaShouldaAlbumArt1Click}>Select File</button>
-                        <div id="div-coulda-shoulda-album-art-1" className="blogpost_photo_filename"></div>
-                        <button onClick={removeCouldaShouldaAlbumArt1} >Clear</button>
-                    </div>
-                </div>
-                <div className="file-input-list-container">
-                    <input ref={blogpostCouldaShouldaAlbumArt2Ref} id={'input-coulda-shoulda-album-art-2'} type='file' name='blogpost_coulda-shoulda-album_art_2' onChange={handleCouldaShouldaAlbumArt2Change} className="file-input" />
-                    <div>Coulda Shoulda 2 Album Art:</div>
-                    <div className="file-upload">
-                        <button id="btn-coulda-shoulda-album-art-2" className="upload-btn" onClick={handleCouldaShouldaAlbumArt2Click}>Select File</button>
-                        <div id="div-coulda-shoulda-album-art-2" className="blogpost_photo_filename"></div>
-                        <button onClick={removeCouldaShouldaAlbumArt2} >Clear</button>
-                    </div>
-                </div>
-                <div className="file-input-list-container">
-                    <input ref={blogpostMapRef} id={'input-map'} type='file' name='blogpost_map' onChange={handleMapChange} className="file-input" />
-                    <div>Map Photo:</div>
-                    <div className="file-upload">
-                        <button id="btn-map-photo" className="upload-btn" onClick={handleMapClick}>Select File</button>
-                        <div id="div-map-photo" className="blogpost_photo_filename"></div>
-                        <button onClick={removeMap} >Clear</button>
-                    </div>
-                </div>
-                <StringInput controlName={'blogpost_coulda-shoulda-1-title'} myLabel={'Coulda Shoulda 1 Title:'} value={blogpostCouldaShoulda1Title} onChange={(e) => setBlogpostCouldaShoulda1Title(e.target.value)} />
-                <Editor handleEditorChange={handleEditorCouldaWoulda1Body} value={blogpostCouldaShoulda1Body} label={'Coulda Shoulda 1 Title:'} />
-                <StringInput controlName={'blogpost_coulda-shoulda-2-title'} myLabel={'Coulda Shoulda 2 Title:'} value={blogpostCouldaShoulda2Title} onChange={(e) => setBlogpostCouldaShoulda2Title(e.target.value)} />
-                <Editor handleEditorChange={handleEditorCouldaWoulda2Body} value={blogpostCouldaShoulda2Body} label={'Coulda Shoulda 2 Body:'} />
-                {/* <div className="file-input-list-container">
-                    <input ref={mapRef} id={'blogpost_map'} type='file' name='blogpost_map' onChange={handleMapChange} className="file-input" />
-                    <div>Map Photo:</div>
-                    <div className="file-upload">
-                        <button className="upload-btn" onClick={handleMapClick}>Select File</button>
-                        <div id="blogpost_map_div" className="blogpost_photo_filename"></div>
-                        <button onClick={removeMap}>Clear</button>
-                    </div>
-                </div> */}
+
+
 
                 <br></br>
 
-                {/* <div className="file-input-list-container">
-                    <div>Blog Photos:</div>
-                    <FileInputList onCaptionChange={handleCaptionChange} removeFile={removeFile} inputIds={inputIdArray} handleFileChange={handleFileChange} />
-                </div> */}
+
                 <SubmitButton id='new-post-btn' action={'Create New Post'} onSubmit={handleSubmit} valid={formIsValid} />
             </form>
+            <div className="new-post-padding"></div>
+
         </div>
     )
 }
