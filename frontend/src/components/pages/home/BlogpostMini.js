@@ -11,9 +11,9 @@ const BlogpostMini = ({ post }) => {
             <div className="blogpost-mini-title">
                 {post.blogpost_title}
             </div>
-            <div className="blogpost-mini-bands">
+            {/* <div className="blogpost-mini-bands">
                 {`${post.blogpost_album_art_1_details.band} & ${post.blogpost_album_art_2_details.band}`.toUpperCase()}
-            </div>
+            </div> */}
         </div>
     )
 

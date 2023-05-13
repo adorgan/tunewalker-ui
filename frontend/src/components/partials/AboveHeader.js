@@ -14,7 +14,7 @@ const AboveHeader = () => {
     return (
         <div className='above-header'>
             <div className='above-header-title' onClick={() => navigate('/')}>
-                The TuneWal<img className="header-icon" src="tunewalker2.svg"></img>er
+                The TuneWal<img className="header-icon" src="/tunewalker2.svg"></img>er
             </div>
             <div className="above-header-right" >
                 <div className="above-header-icon-btn">

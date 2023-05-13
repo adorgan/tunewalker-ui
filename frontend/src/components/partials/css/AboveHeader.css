@@ -53,12 +53,12 @@
 
 @media (max-width:650px){
     .header-icon {
-        height: 32px;
+        height: 24px;
     }
 
     .above-header-title {
         padding-left: 16px;
-        font-size: 32px;
+        font-size: 24px;
     }
 
     .above-header-right {

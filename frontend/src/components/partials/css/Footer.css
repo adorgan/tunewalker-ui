@@ -11,11 +11,25 @@
 }
 
 .footer-made-with{
+    margin-top: 16px;
     font-size: 12px;
     align-self: center;
 }
 
 .footer-podwalker-container a{
-    color: #a7c2ff;
+    color: #007bff;
     text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-podwalker-container span{
+    color: white;
+    font-weight: 400;
+}
+
+.footer-podwalker-logo{
+    padding: 4px 8px;
+    background-color: #007bff;
+    border-radius: 3px;
+    margin-right: 8px;
 }

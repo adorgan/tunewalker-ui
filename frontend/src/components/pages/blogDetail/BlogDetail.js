@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import http from "../../../utils/http/httpConfig";
 import './css/BlogDetail.css'
+import RollingStone from "../home/RollingStone";
 
 const BlogDetail = () => {
     const { id } = useParams();
@@ -27,14 +28,14 @@ const BlogDetail = () => {
                     <div className="blog-detail-header">
                         <div className="blog-detail-image-container">
                             <img className="blog-detail-image" src={post?.blogpost_hero_photo}></img>
-                            <div className="blog-detail-hero-caption">{post.blogpost_hero_photo_caption}</div>
+                            {/* <div className="blog-detail-hero-caption">{post.blogpost_hero_photo_caption}</div> */}
                         </div>
-                        <h1>{post.blogpost_title}</h1>
+                        <h1 className="blog-detail-title">{post.blogpost_title}</h1>
                         <div className="blog-detail-publish-date">{blogDate}</div>
                     </div>
                     <div className="blog-detail-content">
                         <div className="blog-detail-left">
-                            {/* <img className="blog-detail-album-art" src={post.blogpost_album_art_1}></img> */}
+                            <RollingStone />
                         </div>
 
                         <div className="blog-detail-center">
@@ -73,7 +74,7 @@ const BlogDetail = () => {
                                 </div>
                             </div>
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_review_2 }}></div>
-                            <div class="fb-comments" data-href="https://thetunewalker.com/blogpost/6442f5e5244d332f2dccabe5" data-width="100%" data-numposts="5"></div>
+                            <div  data-href={`https://thetunewalker.com/blogpost/${id}`} data-width="100%" data-numposts="5"></div>
 
                         </div>
 

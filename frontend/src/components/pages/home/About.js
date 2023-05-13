@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import '../blogDetail/css/BlogDetail.css';
 import http from "../../../utils/http/httpConfig";
+import './css/About.css';
 
 const About = () => {
     const [post, setPost] = useState(null);
@@ -24,10 +25,10 @@ const About = () => {
                     <div className="blog-detail-header">
                         <div className="blog-detail-image-container">
                             <img className="blog-detail-image" src={post?.blogpost_hero_photo}></img>
-                            <div className="blog-detail-hero-caption">{post.blogpost_hero_photo_caption}</div>
+                            {/* <div className="blog-detail-hero-caption">{post.blogpost_hero_photo_caption}</div> */}
                         </div>
-                        <h1>{post.blogpost_title}</h1>
-                        <div className="blog-detail-publish-date">{blogDate}</div>
+                        <h1 className="about-title">{post.blogpost_title}</h1>
+                        {/* <div className="blog-detail-publish-date">{blogDate}</div> */}
                     </div>
                     <div className="blog-detail-content">
                         <div className="blog-detail-left"></div>

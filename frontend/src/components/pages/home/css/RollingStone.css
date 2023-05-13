@@ -1,0 +1,22 @@
+.rolling-stone-container {
+    background-color: white;
+    padding: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
+    box-sizing: border-box;
+    border: 2px solid red;
+
+}
+.rolling-stone-container img{
+    width: 100%
+}
+
+.rolling-stone-container:hover{
+    cursor: pointer;
+}
+
+.rolling-stone-title{
+    font-weight: 700;
+    font-size: 1.2em;
+    text-align: center;
+}

@@ -9,21 +9,21 @@ export default function Header() {
         <li className="right-menu-posts">
           <Link to={'/archive'}>ARCHIVE</Link>
         </li>
-        <li>
+        {/* <li>
           <div className="right-menu-posts" >
             <Link to={`/`}>CONNECT</Link>
           </div>
-        </li>
+        </li> */}
         <li>
           <div className="right-menu-posts" >
             <Link to={`/stats`}>STATS</Link>
           </div>
         </li>
-        <li>
+        {/* <li>
           <div className="right-menu-posts" >
             <Link to={`/`}>GEAR</Link>
           </div>
-        </li>
+        </li> */}
         <li>
           <div className="right-menu-posts" >
             <Link to={`/about`}>ABOUT</Link>

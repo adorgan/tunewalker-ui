@@ -22,15 +22,17 @@ const Home = () => {
 
     }, []);
     return (<>
-        <div className="home-sidebar-container"></div>
+        <div className="home-sidebar-container">
+        </div>
         <div className="home-main-content-container">
             {posts.length > 0 &&
                 <div>
+                    
                     <div className="home-title-latest">Latest</div>
                     <BlogpostPreview post={posts[0]} handleClick={() => navigate(`blogpost/${posts[0]?.id}`)} />
                     <hr></hr>
-                    <div className="home-title-latest">Posts You Might Like</div>
-                    <BlogpostMiniList posts={[posts[0], posts[1], posts[0]]}/>
+                    <div className="home-title-latest">Previous Posts</div>
+                    <BlogpostMiniList posts={[posts[0]]}/>
                     
                 </div>
 

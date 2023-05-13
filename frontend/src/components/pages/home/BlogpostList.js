@@ -19,10 +19,10 @@ export default function BlogpostList({ isAdmin = false }) {
                 setList(arr.map((post) => {
                     let url = "";
                     if (isAdmin) {
-                        url = `admin/blogpost/${post.id}`
+                        url = `/admin/blogpost/${post.id}`
                     }
                     else {
-                        url = `blogpost/${post.id}`
+                        url = `/blogpost/${post.id}`
                     }
 
                     return (
