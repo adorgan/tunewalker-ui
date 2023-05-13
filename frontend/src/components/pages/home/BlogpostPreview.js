@@ -28,9 +28,9 @@ const BlogpostPreview = ({ post, handleClick }) => {
                 <img className="blogpost-preview-hero-img" src={post.blogpost_hero_photo}></img>
             </div>
             <div className="blogpost-preview-details-title">{post.blogpost_title}</div>
-            <div className="blogpost-preview-bands">
+            {/* <div className="blogpost-preview-bands">
                 {`Featuring ${post.blogpost_album_art_1_details.band} and ${post.blogpost_album_art_2_details.band}`.toUpperCase()}
-            </div>
+            </div> */}
             <div className="blogpost-preview-by-line">By Tim Dorgan</div>
             <div>{previewText}
                 <span className="blogpost-preview-continue-reading-span">continue reading</span>

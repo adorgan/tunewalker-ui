@@ -73,6 +73,8 @@ const BlogDetail = () => {
                                 </div>
                             </div>
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_review_2 }}></div>
+                            <div class="fb-comments" data-href="https://thetunewalker.com/blogpost/6442f5e5244d332f2dccabe5" data-width="100%" data-numposts="5"></div>
+
                         </div>
 
                         <div className="blog-detail-right">
