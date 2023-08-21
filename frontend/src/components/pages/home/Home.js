@@ -15,6 +15,7 @@ const Home = () => {
 
     useEffect(() => {
 
+
         http.get("/blogpost/list")
             .then((res) => {
                 setPosts(res.data);
@@ -29,10 +30,10 @@ const Home = () => {
                 <div>
                     
                     <div className="home-title-latest">Latest</div>
-                    <BlogpostPreview post={posts[0]} handleClick={() => navigate(`blogpost/${posts[0]?.id}`)} />
+                    <BlogpostPreview post={posts[posts.length - 1]} handleClick={() => navigate(`blogpost/${posts[posts.length - 1]?.id}`)} />
                     <hr></hr>
                     <div className="home-title-latest">Previous Posts</div>
-                    <BlogpostMiniList posts={[posts[0]]}/>
+                    <BlogpostMiniList posts={ posts.slice(posts.length - 4, posts.length - 1) }/>
                     
                 </div>
 

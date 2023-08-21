@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import SubmitButton from "../partials/buttons/SubmitButton";
 import ReactModal from 'react-modal';
 import DeleteDialog from "./DeleteDialog";
+import EmailDialog from "./EmailDialog";
 import ActionButton from "../partials/buttons/ActionButton";
 
 ReactModal.setAppElement('#root');
@@ -15,7 +16,8 @@ const AdminBlogpostDetail = () => {
     const { id } = useParams();
     const [post, setPost] = useState(null);
     const [blogDate, setBlotDate] = useState("");
-    const [showModal, setShowModal] = useState(false);
+    const [showDeleteModal, setshowDeleteModal] = useState(false);
+    const [showEmailModal, setEmailModal] = useState(false);
 
 
 
@@ -38,20 +40,36 @@ const AdminBlogpostDetail = () => {
     }
 
     const handleDelete = () => {
-        http.delete(`blogpost/${id}`)
+        http.delete(`admin/blogpost/${id}`)
             .then((res) => {
                 navigate('/admin');
-                setShowModal(false);
+                setshowDeleteModal(false);
             })
             .catch((err) => console.log(err));
     }
 
-    const handleOpenModal = () => {
-        setShowModal(true);
+    const handleOpenDeleteModal = () => {
+        setshowDeleteModal(true);
     }
 
-    const handleCloseModal = () => {
-        setShowModal(false);
+    const handleCloseDeleteModal = () => {
+        setshowDeleteModal(false);
+    }
+
+    const handleOpenEmailModal = () => {
+        setEmailModal(true);
+    }
+
+    const handleCloseEmailModal = () => {
+        setEmailModal(false);
+    }
+
+    const handleEmail = () => {
+        http.post(`admin/postNotification/${id}`)
+            .then((res) => {
+                setEmailModal(false);
+            })
+            .catch((err) => console.log(err));
     }
 
 
@@ -61,17 +79,25 @@ const AdminBlogpostDetail = () => {
             <div className="admin-main-header">
                 <ActionButton title={'Home'} onClick={handleHomeClick}></ActionButton>
                 <div className="dashboard-header-right-container">
+                    <ActionButton title={'Send Email Notifcations'} onClick={handleOpenEmailModal}></ActionButton>
                     <ActionButton title={'Edit'} onClick={handleEdit}></ActionButton>
-                    <ActionButton title={'Delete'} onClick={handleOpenModal}></ActionButton>
+                    <ActionButton title={'Delete'} onClick={handleOpenDeleteModal}></ActionButton>
                 </div>
             </div>
             <div className="blog-detail-container">
                 <ReactModal
-                    isOpen={showModal}
+                    isOpen={showDeleteModal}
                     className="modal"
-                    onRequestClose={handleCloseModal}
+                    onRequestClose={handleCloseDeleteModal}
                     shouldCloseOnOverlayClick={true}>
-                    <DeleteDialog onDelete={handleDelete} onHideModal={handleCloseModal}></DeleteDialog>
+                    <DeleteDialog onDelete={handleDelete} onHideModal={handleCloseDeleteModal}></DeleteDialog>
+                </ReactModal>
+                <ReactModal
+                    isOpen={showEmailModal}
+                    className="modal"
+                    onRequestClose={handleCloseEmailModal}
+                    shouldCloseOnOverlayClick={true}>
+                    <EmailDialog onSend={handleEmail} onHideModal={handleCloseEmailModal}></EmailDialog>
                 </ReactModal>
                 {post &&
                     <>

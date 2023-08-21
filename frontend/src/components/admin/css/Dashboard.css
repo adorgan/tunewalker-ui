@@ -10,3 +10,19 @@
 .dashboard-header-right-container{
     display: flex;
 }
+
+.dashboard-content{
+    display: flex;
+    flex-direction: row;
+}
+
+.dashboard-content-left, .dashboard-content-right{
+    flex: .25;
+}
+
+@media (max-width: 800px) {
+    .dashboard-content-left, .dashboard-content-right{
+        display: none;
+    }
+    
+}

@@ -16,7 +16,7 @@
 }
 
 .blogpost-preview-album-art-container{
-    position: relative;;
+    position: relative;
 }
 
 .blogpost-preview-rank{
@@ -64,7 +64,7 @@
 .blogpost-preview-hero-img{
     object-fit: cover;
     width: 100%;
-    max-height: 400px;
+    /* max-height: 400px; */
 }
 
 .blogpost-preview-by-line{

@@ -8,21 +8,24 @@ const Stats = () => {
     const [totalMiles, setTotalMiles] = useState(0);
     const [totalHours, setTotalHours] = useState(0);
     const [totalMinutes, setTotalMinutes] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         http.get('/blogpost/stats')
             .then((res) => {
-                setTotalMiles(res.data.totalMiles);
+                setLoading(false);
+                setTotalMiles(Math.round(Math.round(res.data.totalMiles * 100) / 100));
                 let curHours = res.data.totalHours;
                 let curMinutes = res.data.totalMinutes;
-                console.log(curHours, curMinutes);
 
-                curHours += Math.floor(curMinutes / 60);
+                curHours += Math.round(Math.floor(curMinutes / 60));
                 curMinutes = curMinutes % 60;
                 setTotalHours(curHours);
                 setTotalMinutes(curMinutes);
             })
-    })
+    }, [])
+
+    
 
 
     return (
@@ -30,15 +33,18 @@ const Stats = () => {
             <div className="stats-sidebar"></div>
             <div className="stats-content">
                 <div className="stats-top-container">
-                    <div className="stats-top-card">
-                        Miles Walked: {totalMiles}
-                    </div>
-                    <div className="stats-top-card">
-                        Hours Walked: {totalHours}
+                    <div className="stats-card-container">
+                        <div className="stats-top-card">
+                            {totalMiles}
+                        </div>
+                        <div>Miles Walked</div>
                     </div>
 
-                    <div className="stats-top-card">
-                        Minutes Walked: {totalMinutes}
+                    <div className="stats-card-container">
+                        <div className="stats-top-card">
+                            {totalHours}:{totalMinutes < 10 ? '0' + totalMinutes : totalMinutes}
+                        </div>
+                        <div>Time Walked</div>
                     </div>
                 </div>
             </div>

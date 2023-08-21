@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import '../blogDetail/css/BlogDetail.css';
 import http from "../../../utils/http/httpConfig";
 import './css/About.css';
+import RollingStone from "./RollingStone";
+import { FacebookProvider, Comments } from 'react-facebook';
+
 
 const About = () => {
     const [post, setPost] = useState(null);
@@ -30,13 +33,20 @@ const About = () => {
                         <h1 className="about-title">{post.blogpost_title}</h1>
                         {/* <div className="blog-detail-publish-date">{blogDate}</div> */}
                     </div>
-                    <div className="blog-detail-content">
-                        <div className="blog-detail-left"></div>
+                    <div className="about-detail-content">
+                        <div className="blog-detail-left">
+                            <RollingStone />
+                        </div>
 
                         <div className="blog-detail-center">
                             <div className="blog-detail-body" dangerouslySetInnerHTML={{ __html: post.blogpost_intro }}></div>
+                            <br></br>
+                            <br></br>
+                            <FacebookProvider appId="1570509210111943">
+                                <Comments href="https://thetunewalker.com/about" />
+                            </FacebookProvider>
                         </div>
-                        <div className="blog-detail-right"></div>
+                        <div className="blog-detail-left"></div>
                     </div>
                 </div>
             }

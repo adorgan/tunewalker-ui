@@ -209,7 +209,7 @@ export default function NewBlogpost() {
             }
         ))
 
-        http.post('blogpost', formData)
+        http.post('admin/blogpost', formData)
             .then((res) => {
                 navigate(`/admin`)
             })

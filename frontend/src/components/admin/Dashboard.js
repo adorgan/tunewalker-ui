@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import BlogpostList from "../pages/home/BlogpostList";
 import './css/Dashboard.css'
 import { useNavigate } from "react-router-dom";
@@ -15,18 +15,18 @@ export default function Dashboard() {
   }
 
   const handleLogout = () => {
-    
+
     http.post('/auth/logout', {
       token: sessionStorage.getItem('refreshToken'),
       username: sessionStorage.getItem('username')
     })
-    .then(() => {
-      setIsAdmin(false);
-      navigate('/admin/login');
-    })
-    .finally(() => {
-      sessionStorage.clear();
-    })
+      .then(() => {
+        setIsAdmin(false);
+        navigate('/admin/login');
+      })
+      .finally(() => {
+        sessionStorage.clear();
+      })
   }
 
   return (
@@ -35,7 +35,12 @@ export default function Dashboard() {
         <button className="dashboard-header-btn" onClick={handleNewPostNav}>New Post</button>
         <button className="dashboard-header-btn" onClick={handleLogout}>Logout</button>
       </div>
-      <BlogpostList isAdmin={false}></BlogpostList>
+      <div className="dashboard-content">
+        <div className="dashboard-content-left"></div>
+        <BlogpostList isAdmin={isAdmin}></BlogpostList>
+        <div className="dashboard-content-right"></div>
+      </div>
+
     </div>
   )
 }

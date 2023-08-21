@@ -1,10 +1,17 @@
 import React from "react";
 import './css/BlogpostMini.css';
+import { useNavigate } from "react-router-dom";
 
 const BlogpostMini = ({ post }) => {
 
+    const navigate = useNavigate();
+
+    function handleClick() {
+        navigate(`/blogpost/${post.id}`);
+    }
+
     return (
-        <div className="blogpost-mini-container">
+        <div className="blogpost-mini-container" onClick={handleClick}>
             <div className="blogpost-mini-img-container">
                 <img className="blogpost-mini-hero-img" src={post.blogpost_hero_photo}></img>
             </div>

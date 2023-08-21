@@ -7,7 +7,6 @@ import AdminContext from "../../../utils/contexts/admin-context";
 import { useNavigate } from "react-router-dom";
 
 export default function BlogpostList({ isAdmin = false }) {
-    // const {isAdmin, setIsAdmin} = useContext(AdminContext);
 
     const [list, setList] = useState([]);
     const navigate = useNavigate();

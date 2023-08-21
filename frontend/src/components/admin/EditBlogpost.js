@@ -125,11 +125,12 @@ const EditBlogpost = () => {
         payload['blogpost_coulda_shoulda_album_art_2'] = blogpostCouldaShouldaAlbumArt2;
         payload['blogpost_map'] = blogpostMap;
         payload['blogpost_hero_photo'] = blogpostHeroPhoto;
+        payload['createdAt'] = post.createdAt;
         
 
         
 
-        http.put(`blogpost/${post.id}`, payload)
+        http.put(`admin/blogpost/${post.id}`, payload)
             .then((res) => {
                 navigate(`/admin`)
             })

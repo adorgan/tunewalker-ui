@@ -15,7 +15,7 @@
     padding-top: 12px;
 }
 
-@media (max-width:600px){
+@media (max-width:800px){
     .home-sidebar-container{
         flex: 0
     }
